@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Stationlog">
+  <!-- Brand blue field (the lane colour from the prototype). Full-bleed so it works as a
+       maskable icon; the mark stays inside the centre safe zone. -->
+  <rect width="512" height="512" fill="#1F4E9E"/>
+  <!-- Eight bars for the eight stations, rising like the volume chart in the app.
+       Purely geometric, so it carries no trademark. -->
+  <g fill="#ECEDE8">
+    <rect x="118" y="300" width="26" height="94"  rx="8"/>
+    <rect x="158" y="264" width="26" height="130" rx="8"/>
+    <rect x="198" y="224" width="26" height="170" rx="8"/>
+    <rect x="238" y="272" width="26" height="122" rx="8"/>
+    <rect x="278" y="196" width="26" height="198" rx="8"/>
+    <rect x="318" y="238" width="26" height="156" rx="8"/>
+    <rect x="358" y="150" width="26" height="244" rx="8"/>
+    <rect x="398" y="286" width="26" height="108" rx="8"/>
+  </g>
+  <!-- Finish line under the bars. -->
+  <rect x="112" y="404" width="312" height="10" rx="5" fill="#ffffff" opacity="0.85"/>
+</svg>

@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Design tokens ported verbatim from the prototype (hybrid-log.html). Do not restyle —
+  these are the settled colours. Light values live on :root; the @media block swaps them
+  for dark mode unless the user has forced light with data-theme="light".
+*/
+:root {
+  --chalk: #ecede8;
+  --panel: #ffffff;
+  --graphite: #23272b;
+  --steel: #6e787f;
+  --line: #d5d8d2;
+  --lane: #1f4e9e;
+  --lane-soft: #dce5f4;
+  --effort: #c2412d;
+  --ok: #2f7d4f;
+
+  /* Safe-area insets for notch (top) and home indicator (bottom). */
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --chalk: #191c1f;
+    --panel: #22262a;
+    --graphite: #e8eae5;
+    --steel: #98a1a7;
+    --line: #353a3f;
+    --lane: #6f9be8;
+    --lane-soft: #223250;
+    --effort: #e0664f;
+    --ok: #5db27f;
+  }
+}
+
+/* Allow forcing dark mode from settings later, independent of the OS. */
+:root[data-theme='dark'] {
+  --chalk: #191c1f;
+  --panel: #22262a;
+  --graphite: #e8eae5;
+  --steel: #98a1a7;
+  --line: #353a3f;
+  --lane: #6f9be8;
+  --lane-soft: #223250;
+  --effort: #e0664f;
+  --ok: #5db27f;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--chalk);
+  color: var(--graphite);
+  font-family: 'Barlow', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Respect "reduce motion" everywhere (accessibility requirement). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Always show a clear keyboard focus ring (accessibility requirement). */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--lane);
+  outline-offset: 2px;
+}

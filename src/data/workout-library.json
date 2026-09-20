@@ -1,0 +1,2590 @@
+{
+ "version": 1,
+ "generated": "2026-09-20",
+ "count": 100,
+ "categories": [
+  "compromised running",
+  "conditioning",
+  "recovery",
+  "running",
+  "simulation",
+  "station skills",
+  "strength"
+ ],
+ "equipment": [
+  "barbell",
+  "bike erg",
+  "box",
+  "dumbbells",
+  "foam roller",
+  "kettlebells",
+  "med ball",
+  "none",
+  "pool",
+  "pull-up bar",
+  "rack",
+  "rower",
+  "sandbag",
+  "skierg",
+  "sled",
+  "treadmill",
+  "wall ball"
+ ],
+ "disclaimer": "General fitness guidance only, not medical advice. Consult a qualified professional before starting a new training programme.",
+ "workouts": [
+  {
+   "id": "run-01",
+   "name": "Threshold kilometres",
+   "category": "running",
+   "equipment": [
+    "none"
+   ],
+   "duration_min": 50,
+   "difficulty": "intermediate",
+   "purpose": "Raise the pace you can hold before lactate climbs — the engine behind every race run.",
+   "warmup": "10 min easy jog, then 4 × 20 s strides with walk back.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "5 × 1 km at threshold (comfortably hard, could speak in short phrases), 90 s jog recovery between reps."
+    }
+   ],
+   "cooldown": "10 min easy jog.",
+   "scaling": {
+    "down": "3 × 1 km with 2 min recovery.",
+    "up": "6 × 1 km, cut recovery to 60 s."
+   }
+  },
+  {
+   "id": "run-02",
+   "name": "Four hundreds at 5k pace",
+   "category": "running",
+   "equipment": [
+    "none"
+   ],
+   "duration_min": 45,
+   "difficulty": "intermediate",
+   "purpose": "Sharpen leg speed so race pace feels like cruising.",
+   "warmup": "12 min easy, drills: A-skips, high knees, heel flicks.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "8 × 400 m at current 5 km pace, 60 s standing recovery."
+    }
+   ],
+   "cooldown": "8 min easy jog.",
+   "scaling": {
+    "down": "6 × 400 m, 90 s recovery.",
+    "up": "12 × 400 m, 45 s recovery."
+   }
+  },
+  {
+   "id": "run-03",
+   "name": "Continuous tempo",
+   "category": "running",
+   "equipment": [
+    "none"
+   ],
+   "duration_min": 45,
+   "difficulty": "intermediate",
+   "purpose": "Hold one honest effort without the mental break of intervals.",
+   "warmup": "10 min easy.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "25 min continuous at race effort. Even pace throughout — check your split every 5 min and correct early."
+    }
+   ],
+   "cooldown": "10 min easy.",
+   "scaling": {
+    "down": "15 min tempo.",
+    "up": "35 min tempo."
+   }
+  },
+  {
+   "id": "run-04",
+   "name": "Long run with pickups",
+   "category": "running",
+   "equipment": [
+    "none"
+   ],
+   "duration_min": 80,
+   "difficulty": "intermediate",
+   "purpose": "Aerobic base with a reminder of what pace feels like on tired legs.",
+   "warmup": "Start easy, no separate warm-up needed.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "75 min easy zone 2. From minute 40, insert 4 × 2 min at race pace with 5 min easy between."
+    }
+   ],
+   "cooldown": "Walk 5 min.",
+   "scaling": {
+    "down": "55 min with 3 pickups.",
+    "up": "95 min with 6 pickups."
+   }
+  },
+  {
+   "id": "run-05",
+   "name": "Pyramid intervals",
+   "category": "running",
+   "equipment": [
+    "none"
+   ],
+   "duration_min": 50,
+   "difficulty": "intermediate",
+   "purpose": "Practise changing gear, which is what happens every time you leave a station.",
+   "warmup": "12 min easy plus strides.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "1-2-3-2-1 min hard with equal jog recovery. Repeat the ladder twice, 3 min easy between ladders."
+    }
+   ],
+   "cooldown": "8 min easy.",
+   "scaling": {
+    "down": "One ladder only.",
+    "up": "Three ladders, recovery cut to half the work time."
+   }
+  },
+  {
+   "id": "run-06",
+   "name": "Hill repeats",
+   "category": "running",
+   "equipment": [
+    "none"
+   ],
+   "duration_min": 45,
+   "difficulty": "intermediate",
+   "purpose": "Build running strength with less impact than flat speed work.",
+   "warmup": "15 min easy to the hill, 3 × 15 s build-ups.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "10 × 45 s uphill hard, jog down as recovery. Stay tall, drive the knee, short quick steps."
+    }
+   ],
+   "cooldown": "10 min easy home.",
+   "scaling": {
+    "down": "6 repeats.",
+    "up": "14 repeats, or use a 6% treadmill incline."
+   }
+  },
+  {
+   "id": "run-07",
+   "name": "Progression run",
+   "category": "running",
+   "equipment": [
+    "none"
+   ],
+   "duration_min": 45,
+   "difficulty": "beginner",
+   "purpose": "Teach yourself to finish faster than you start.",
+   "warmup": "Built into the run.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "40 min: 15 min easy, 15 min steady, 10 min at race pace. No stopping between blocks."
+    }
+   ],
+   "cooldown": "5 min walk.",
+   "scaling": {
+    "down": "30 min split 12/12/6.",
+    "up": "55 min, finish the last 5 min faster than race pace."
+   }
+  },
+  {
+   "id": "run-08",
+   "name": "Eight hundreds at 10k pace",
+   "category": "running",
+   "equipment": [
+    "none"
+   ],
+   "duration_min": 50,
+   "difficulty": "intermediate",
+   "purpose": "Sit at the edge of hard for longer than a 400 lets you.",
+   "warmup": "12 min easy plus 4 strides.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "6 × 800 m at 10 km pace, 2 min jog recovery. Same split for the last rep as the first."
+    }
+   ],
+   "cooldown": "10 min easy.",
+   "scaling": {
+    "down": "4 × 800 m.",
+    "up": "8 × 800 m, 90 s recovery."
+   }
+  },
+  {
+   "id": "run-09",
+   "name": "Fartlek on feel",
+   "category": "running",
+   "equipment": [
+    "none"
+   ],
+   "duration_min": 45,
+   "difficulty": "beginner",
+   "purpose": "Unstructured speed when you don't want a watch dictating the session.",
+   "warmup": "10 min easy.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "10 × (2 min hard / 1 min easy), run on terrain and feel rather than pace."
+    }
+   ],
+   "cooldown": "8 min easy.",
+   "scaling": {
+    "down": "6 rounds.",
+    "up": "14 rounds, or make recovery 45 s."
+   }
+  },
+  {
+   "id": "run-10",
+   "name": "Race pace continuous",
+   "category": "running",
+   "equipment": [
+    "none"
+   ],
+   "duration_min": 45,
+   "difficulty": "advanced",
+   "purpose": "Rehearse the exact pace you'll hold on race day, with no stations to hide behind.",
+   "warmup": "12 min easy building to steady.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "6 km continuous at target race run pace. If it falls apart after 4 km, your race target is optimistic."
+    }
+   ],
+   "cooldown": "10 min easy.",
+   "scaling": {
+    "down": "4 km.",
+    "up": "8 km."
+   }
+  },
+  {
+   "id": "run-11",
+   "name": "Treadmill incline intervals",
+   "category": "running",
+   "equipment": [
+    "treadmill"
+   ],
+   "duration_min": 40,
+   "difficulty": "intermediate",
+   "purpose": "Strength-biased running for bad weather or dark evenings.",
+   "warmup": "10 min easy on flat.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "8 × 90 s at 5% incline, hard effort, 90 s walk at 0% between."
+    }
+   ],
+   "cooldown": "8 min flat easy.",
+   "scaling": {
+    "down": "6 reps at 3%.",
+    "up": "10 reps, add 0.5 km/h each rep."
+   }
+  },
+  {
+   "id": "run-12",
+   "name": "Broken threshold",
+   "category": "running",
+   "equipment": [
+    "none"
+   ],
+   "duration_min": 50,
+   "difficulty": "advanced",
+   "purpose": "Get threshold volume in without the neural cost of one long grind.",
+   "warmup": "12 min easy plus strides.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "3 sets of 4 × 400 m at threshold, 30 s standing rest between reps, 2 min between sets."
+    }
+   ],
+   "cooldown": "10 min easy.",
+   "scaling": {
+    "down": "2 sets.",
+    "up": "4 sets."
+   }
+  },
+  {
+   "id": "run-13",
+   "name": "Recovery jog",
+   "category": "running",
+   "equipment": [
+    "none"
+   ],
+   "duration_min": 30,
+   "difficulty": "beginner",
+   "purpose": "Move blood through tired legs without adding fatigue.",
+   "warmup": "None — the whole run is easy.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "30 min zone 1 to low zone 2. Nose breathing throughout. If you can't hold a conversation, slow down."
+    }
+   ],
+   "cooldown": "5 min walk and calf stretch.",
+   "scaling": {
+    "down": "20 min or a brisk walk.",
+    "up": "40 min, still easy."
+   }
+  },
+  {
+   "id": "run-14",
+   "name": "5 km time trial",
+   "category": "running",
+   "equipment": [
+    "none"
+   ],
+   "duration_min": 40,
+   "difficulty": "intermediate",
+   "purpose": "A hard number to set training paces from. Repeat every 6–8 weeks.",
+   "warmup": "15 min easy, drills, 4 × 20 s strides.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "5 km flat, hardest sustainable effort. Go out on target pace, not on feel — the first kilometre always feels easy."
+    }
+   ],
+   "cooldown": "10 min very easy.",
+   "scaling": {
+    "down": "3 km time trial.",
+    "up": "10 km time trial."
+   }
+  },
+  {
+   "id": "run-15",
+   "name": "Long reps at half-marathon effort",
+   "category": "running",
+   "equipment": [
+    "none"
+   ],
+   "duration_min": 55,
+   "difficulty": "advanced",
+   "purpose": "Aerobic strength that holds up across eight race runs, not just one.",
+   "warmup": "12 min easy.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "3 × 2 km at half-marathon effort, 3 min jog recovery."
+    }
+   ],
+   "cooldown": "10 min easy.",
+   "scaling": {
+    "down": "2 × 2 km.",
+    "up": "4 × 2 km, or 3 × 3 km."
+   }
+  },
+  {
+   "id": "comp-01",
+   "name": "Wall ball run rounds",
+   "category": "compromised running",
+   "equipment": [
+    "wall ball"
+   ],
+   "duration_min": 45,
+   "difficulty": "intermediate",
+   "purpose": "The classic pattern: run, lose your legs to squats, run again anyway.",
+   "warmup": "10 min easy jog, 20 air squats, 10 empty wall balls.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "4 rounds: 1 km run at race pace + 25 wall balls at race weight. Walk 60 s between rounds."
+    }
+   ],
+   "cooldown": "5 min walk, quad and hip stretch.",
+   "scaling": {
+    "down": "3 rounds of 800 m + 15 wall balls.",
+    "up": "5 rounds of 1 km + 35 wall balls, no rest between rounds."
+   }
+  },
+  {
+   "id": "comp-02",
+   "name": "Ski and run repeats",
+   "category": "compromised running",
+   "equipment": [
+    "skierg"
+   ],
+   "duration_min": 50,
+   "difficulty": "intermediate",
+   "purpose": "Teach your legs to run after your arms and lungs have taken a beating.",
+   "warmup": "500 m easy ski, 10 min easy jog.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "5 rounds: 500 m SkiErg hard + 1 km run at race pace. Start running within 15 s of dropping the handles."
+    }
+   ],
+   "cooldown": "8 min easy jog.",
+   "scaling": {
+    "down": "3 rounds of 400 m ski + 800 m run.",
+    "up": "6 rounds, hold the same run split throughout."
+   }
+  },
+  {
+   "id": "comp-03",
+   "name": "Sled sandwich",
+   "category": "compromised running",
+   "equipment": [
+    "sled"
+   ],
+   "duration_min": 50,
+   "difficulty": "advanced",
+   "purpose": "The hardest legs-out-of-legs combination in the race, drilled in isolation.",
+   "warmup": "10 min easy jog, 2 × 25 m light sled push.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "3 rounds: 1 km run + 50 m sled push at race weight + 50 m sled pull + 1 km run. Rest 3 min between rounds."
+    }
+   ],
+   "cooldown": "8 min walk or easy jog.",
+   "scaling": {
+    "down": "2 rounds at 60% race sled weight, 800 m runs.",
+    "up": "4 rounds, rest cut to 90 s."
+   }
+  },
+  {
+   "id": "comp-04",
+   "name": "Row and run ladder",
+   "category": "compromised running",
+   "equipment": [
+    "rower"
+   ],
+   "duration_min": 45,
+   "difficulty": "intermediate",
+   "purpose": "Descending distances so pace has to climb as fatigue does.",
+   "warmup": "500 m easy row, 8 min easy jog.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "1000 m row + 1 km run, then 750 m row + 800 m run, then 500 m row + 600 m run, then 250 m row + 400 m run. No rest — transitions are the session."
+    }
+   ],
+   "cooldown": "8 min easy.",
+   "scaling": {
+    "down": "Start at 750 m row and 800 m run.",
+    "up": "Run the ladder up and back down."
+   }
+  },
+  {
+   "id": "comp-05",
+   "name": "Burpee broad jump intervals",
+   "category": "compromised running",
+   "equipment": [
+    "none"
+   ],
+   "duration_min": 40,
+   "difficulty": "advanced",
+   "purpose": "The station that wrecks most people's fourth run. Practise running off it.",
+   "warmup": "10 min easy, 10 slow burpees, hip openers.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "5 rounds: 20 m burpee broad jumps + 600 m run at race pace. 90 s rest between rounds."
+    }
+   ],
+   "cooldown": "8 min easy jog, hip flexor stretch.",
+   "scaling": {
+    "down": "4 rounds of 15 m + 400 m, step-back burpees.",
+    "up": "6 rounds of 25 m + 800 m."
+   }
+  },
+  {
+   "id": "comp-06",
+   "name": "Farmers carry shuttles and runs",
+   "category": "compromised running",
+   "equipment": [
+    "kettlebells"
+   ],
+   "duration_min": 40,
+   "difficulty": "intermediate",
+   "purpose": "Grip and trunk fatigue changes your running form. Find out how much.",
+   "warmup": "8 min easy jog, 2 × 25 m light carry.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "4 rounds: 100 m farmers carry at race weight (break only if grip fails) + 800 m run. 60 s rest between rounds."
+    }
+   ],
+   "cooldown": "Forearm and lat stretch, 5 min walk.",
+   "scaling": {
+    "down": "4 rounds of 50 m carry at 70% weight + 600 m run.",
+    "up": "5 rounds of 200 m carry + 1 km run."
+   }
+  },
+  {
+   "id": "comp-07",
+   "name": "Lunge and run",
+   "category": "compromised running",
+   "equipment": [
+    "sandbag"
+   ],
+   "duration_min": 45,
+   "difficulty": "advanced",
+   "purpose": "Station seven into run eight is where races are lost. Rehearse it fresh-ish.",
+   "warmup": "10 min easy jog, 20 bodyweight walking lunges.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "4 rounds: 50 m sandbag lunges at race weight + 800 m run. Rest 2 min between rounds."
+    }
+   ],
+   "cooldown": "10 min walk, quad stretch.",
+   "scaling": {
+    "down": "3 rounds of 25 m lunges at half weight + 600 m run.",
+    "up": "5 rounds of 100 m lunges + 1 km run."
+   }
+  },
+  {
+   "id": "comp-08",
+   "name": "Descending ski and run",
+   "category": "compromised running",
+   "equipment": [
+    "skierg"
+   ],
+   "duration_min": 40,
+   "difficulty": "intermediate",
+   "purpose": "Negative-split practice with shrinking work and no extra rest.",
+   "warmup": "400 m ski easy, 8 min easy jog.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "1000 m ski + 1 km run, 750 m ski + 750 m run, 500 m ski + 500 m run, 250 m ski + 250 m run. Every run split faster than the last."
+    }
+   ],
+   "cooldown": "8 min easy.",
+   "scaling": {
+    "down": "Begin at 750 m.",
+    "up": "Add a 1250 m ski and 1250 m run at the top."
+   }
+  },
+  {
+   "id": "comp-09",
+   "name": "Four station mini sim",
+   "category": "compromised running",
+   "equipment": [
+    "skierg",
+    "sled",
+    "rower",
+    "wall ball"
+   ],
+   "duration_min": 50,
+   "difficulty": "intermediate",
+   "purpose": "Half the race pattern at full race intensity, without a full sim's recovery cost.",
+   "warmup": "10 min easy jog, light reps on each station.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "1 km run + 1000 m ski, 1 km run + 50 m sled push, 1 km run + 1000 m row, 1 km run + 50 wall balls. Race standard weights, no rest."
+    }
+   ],
+   "cooldown": "10 min walk.",
+   "scaling": {
+    "down": "Halve the station volumes, keep the runs.",
+    "up": "Add a fifth round: 1 km run + 100 m farmers carry."
+   }
+  },
+  {
+   "id": "comp-10",
+   "name": "Transition drill",
+   "category": "compromised running",
+   "equipment": [
+    "skierg",
+    "wall ball"
+   ],
+   "duration_min": 40,
+   "difficulty": "beginner",
+   "purpose": "The first 200 m off a station is where most time leaks. Train that specific moment.",
+   "warmup": "10 min easy jog.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "8 rounds: 30 s hard on a station (alternate ski and wall balls) then immediately 400 m run at race pace. 60 s walk between rounds. Focus entirely on turnover in the first 50 m."
+    }
+   ],
+   "cooldown": "8 min easy.",
+   "scaling": {
+    "down": "6 rounds of 300 m runs.",
+    "up": "10 rounds, 45 s station work."
+   }
+  },
+  {
+   "id": "comp-11",
+   "name": "Wall ball pyramid with runs",
+   "category": "compromised running",
+   "equipment": [
+    "wall ball"
+   ],
+   "duration_min": 45,
+   "difficulty": "intermediate",
+   "purpose": "Build the squat endurance that makes the last station survivable.",
+   "warmup": "10 min easy jog, 15 air squats, 10 light wall balls.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "10, 20, 30, 20, 10 wall balls at race weight, with a 600 m run at race pace after each set. No rest beyond the transitions."
+    }
+   ],
+   "cooldown": "10 min walk, quad stretch.",
+   "scaling": {
+    "down": "5-10-15-10-5 with 400 m runs.",
+    "up": "15-25-35-25-15 with 800 m runs."
+   }
+  },
+  {
+   "id": "comp-12",
+   "name": "Heavy sled, fast run",
+   "category": "compromised running",
+   "equipment": [
+    "sled"
+   ],
+   "duration_min": 40,
+   "difficulty": "advanced",
+   "purpose": "Deliberate mismatch: maximum leg load then maximum turnover.",
+   "warmup": "10 min easy jog, 3 × 15 m building sled push.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "6 rounds: 25 m sled push at 120% of race weight + 400 m run faster than race pace. 2 min rest between rounds."
+    }
+   ],
+   "cooldown": "10 min easy jog.",
+   "scaling": {
+    "down": "4 rounds at race weight.",
+    "up": "8 rounds, or push 50 m."
+   }
+  },
+  {
+   "id": "comp-13",
+   "name": "Row thousands",
+   "category": "compromised running",
+   "equipment": [
+    "rower"
+   ],
+   "duration_min": 50,
+   "difficulty": "intermediate",
+   "purpose": "Straight race-distance practice for the two erg stations and the runs around them.",
+   "warmup": "500 m easy row, 10 min easy jog.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "3 rounds: 1000 m row at race pace + 1 km run at race pace. 90 s rest between rounds. Log every split."
+    }
+   ],
+   "cooldown": "8 min easy.",
+   "scaling": {
+    "down": "2 rounds, 2 min rest.",
+    "up": "4 rounds, no rest."
+   }
+  },
+  {
+   "id": "comp-14",
+   "name": "Roxzone rush",
+   "category": "compromised running",
+   "equipment": [
+    "skierg",
+    "rower",
+    "wall ball"
+   ],
+   "duration_min": 45,
+   "difficulty": "advanced",
+   "purpose": "Train the walking-and-recovering bit between run and station, which is untrained time for nearly everyone.",
+   "warmup": "10 min easy jog, light station reps.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "6 rounds: 600 m run, then a forced 20 s walk-in, then 60 s max effort on a rotating station (ski, row, wall balls). Start the next run immediately. Practise breathing down in that 20 s."
+    }
+   ],
+   "cooldown": "10 min easy.",
+   "scaling": {
+    "down": "4 rounds, 30 s walk-in.",
+    "up": "8 rounds, 10 s walk-in."
+   }
+  },
+  {
+   "id": "comp-15",
+   "name": "Double run blocks",
+   "category": "compromised running",
+   "equipment": [
+    "sled",
+    "sandbag"
+   ],
+   "duration_min": 55,
+   "difficulty": "advanced",
+   "purpose": "Longer running exposure than a sim gives you, with stations still in the way.",
+   "warmup": "10 min easy jog, light sled and sandbag reps.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "2 km run + 50 m sled pull + 2 km run + 50 m sandbag lunges + 2 km run. Race weights, rest only as long as a transition takes."
+    }
+   ],
+   "cooldown": "10 min walk.",
+   "scaling": {
+    "down": "1.5 km runs at 70% station weight.",
+    "up": "3 km runs, add a third station."
+   }
+  },
+  {
+   "id": "str-01",
+   "name": "Squat strength",
+   "category": "strength",
+   "equipment": [
+    "barbell",
+    "rack"
+   ],
+   "duration_min": 60,
+   "difficulty": "intermediate",
+   "purpose": "Raw leg strength makes every sled metre and every wall ball cheaper.",
+   "warmup": "5 min bike or row, 20 air squats, 2 empty bar sets, build to working weight.",
+   "blocks": [
+    {
+     "name": "Main lift",
+     "detail": "Back squat 5 × 5 at roughly 80% of your best single. 3 min rest between sets."
+    },
+    {
+     "name": "Accessory",
+     "detail": "Romanian deadlift 3 × 8. Walking lunge 3 × 20 m with dumbbells. Hanging knee raise 3 × 12."
+    }
+   ],
+   "cooldown": "Hip flexor and adductor stretch, 5 min.",
+   "scaling": {
+    "down": "Goblet squat 4 × 10, no barbell.",
+    "up": "Add a top single before the 5 × 5."
+   }
+  },
+  {
+   "id": "str-02",
+   "name": "Leg volume",
+   "category": "strength",
+   "equipment": [
+    "barbell",
+    "dumbbells"
+   ],
+   "duration_min": 55,
+   "difficulty": "intermediate",
+   "purpose": "Muscle in the quads and glutes — the tissue that absorbs race-day damage.",
+   "warmup": "5 min easy row, banded glute work, 2 build-up sets.",
+   "blocks": [
+    {
+     "name": "Main",
+     "detail": "Front squat 4 × 8 at a weight you could do 10 with. 2 min rest."
+    },
+    {
+     "name": "Superset",
+     "detail": "Bulgarian split squat 3 × 10 each leg with dumbbells, straight into leg curl or Nordic 3 × 8."
+    },
+    {
+     "name": "Finisher",
+     "detail": "Goblet squat 2 × 20, controlled tempo."
+    }
+   ],
+   "cooldown": "Quad and calf stretch.",
+   "scaling": {
+    "down": "Drop the finisher, use bodyweight split squats.",
+    "up": "Add 3 × 12 leg press."
+   }
+  },
+  {
+   "id": "str-03",
+   "name": "Posterior chain",
+   "category": "strength",
+   "equipment": [
+    "barbell"
+   ],
+   "duration_min": 55,
+   "difficulty": "intermediate",
+   "purpose": "Hamstrings, glutes and back — the sled pull and the last two kilometres.",
+   "warmup": "5 min row, 10 good mornings with empty bar, banded hamstring work.",
+   "blocks": [
+    {
+     "name": "Main lift",
+     "detail": "Deadlift 4 × 5, stopping each set with two reps left in the tank. 3 min rest."
+    },
+    {
+     "name": "Accessory",
+     "detail": "Hip thrust 3 × 10. Single-leg RDL 3 × 10 each. Back extension 3 × 15."
+    }
+   ],
+   "cooldown": "Hamstring and lower back stretch.",
+   "scaling": {
+    "down": "Trap bar deadlift or kettlebell deadlift 4 × 8.",
+    "up": "Deadlift 5 × 3 heavier, add 3 × 8 barbell row."
+   }
+  },
+  {
+   "id": "str-04",
+   "name": "Pull and carry",
+   "category": "strength",
+   "equipment": [
+    "pull-up bar",
+    "dumbbells",
+    "kettlebells"
+   ],
+   "duration_min": 50,
+   "difficulty": "intermediate",
+   "purpose": "Back and grip strength for the sled pull, farmers carry and ski.",
+   "warmup": "Band pull-aparts, scap pull-ups, 5 min easy erg.",
+   "blocks": [
+    {
+     "name": "Main",
+     "detail": "Pull-ups 5 × 6-8, weighted if you can. 2 min rest."
+    },
+    {
+     "name": "Accessory",
+     "detail": "Bent-over row 4 × 8. Single-arm dumbbell row 3 × 10 each. Face pulls 3 × 15."
+    },
+    {
+     "name": "Carry",
+     "detail": "Farmers carry 4 × 50 m heavy, rest as needed. Grip should be the limit, not your legs."
+    }
+   ],
+   "cooldown": "Lat and forearm stretch.",
+   "scaling": {
+    "down": "Ring rows or band-assisted pull-ups.",
+    "up": "Weighted pull-ups 5 × 5, carries at 1.5 × bodyweight total."
+   }
+  },
+  {
+   "id": "str-05",
+   "name": "Press and stability",
+   "category": "strength",
+   "equipment": [
+    "barbell",
+    "dumbbells"
+   ],
+   "duration_min": 45,
+   "difficulty": "beginner",
+   "purpose": "Overhead strength for the ski and wall ball, and shoulders that survive the volume.",
+   "warmup": "Band work, 10 empty bar presses, 5 min easy.",
+   "blocks": [
+    {
+     "name": "Main",
+     "detail": "Strict overhead press 4 × 6. 2 min rest."
+    },
+    {
+     "name": "Accessory",
+     "detail": "Incline dumbbell press 3 × 10. Lateral raise 3 × 15. Overhead carry 3 × 30 m."
+    },
+    {
+     "name": "Core",
+     "detail": "Dead bug 3 × 10 each side, plank 3 × 45 s."
+    }
+   ],
+   "cooldown": "Thoracic opener over a foam roller.",
+   "scaling": {
+    "down": "Dumbbell press seated, 3 × 10.",
+    "up": "Push press 5 × 3 heavy before the strict work."
+   }
+  },
+  {
+   "id": "str-06",
+   "name": "Full body basics",
+   "category": "strength",
+   "equipment": [
+    "barbell",
+    "pull-up bar"
+   ],
+   "duration_min": 60,
+   "difficulty": "beginner",
+   "purpose": "One session a week that covers everything, for when time is short.",
+   "warmup": "5 min row, dynamic mobility, empty bar work.",
+   "blocks": [
+    {
+     "name": "Main",
+     "detail": "Back squat 4 × 6, deadlift 3 × 5, alternating with 2 min rest."
+    },
+    {
+     "name": "Upper",
+     "detail": "Pull-ups 3 × 8. Overhead press 3 × 8."
+    },
+    {
+     "name": "Finisher",
+     "detail": "Walking lunge 3 × 20 m loaded."
+    }
+   ],
+   "cooldown": "5 min full-body stretch.",
+   "scaling": {
+    "down": "Cut to squat, pull-up and press.",
+    "up": "Add sled push 4 × 25 m at the end."
+   }
+  },
+  {
+   "id": "str-07",
+   "name": "Single leg focus",
+   "category": "strength",
+   "equipment": [
+    "dumbbells",
+    "box"
+   ],
+   "duration_min": 45,
+   "difficulty": "intermediate",
+   "purpose": "Running and lunging are one-legged. Train them that way and fix side-to-side gaps.",
+   "warmup": "Glute activation, 10 step-ups each leg.",
+   "blocks": [
+    {
+     "name": "Main",
+     "detail": "Rear-foot elevated split squat 4 × 8 each leg, heavy dumbbells. 90 s rest."
+    },
+    {
+     "name": "Accessory",
+     "detail": "Step-ups to a knee-height box 3 × 10 each. Single-leg RDL 3 × 10 each. Lateral lunge 3 × 8 each."
+    },
+    {
+     "name": "Balance",
+     "detail": "Single-leg calf raise 3 × 15 each."
+    }
+   ],
+   "cooldown": "Calf and hip stretch.",
+   "scaling": {
+    "down": "Bodyweight, lower box.",
+    "up": "Add a weighted vest and a 3 s lowering tempo."
+   }
+  },
+  {
+   "id": "str-08",
+   "name": "Sled strength",
+   "category": "strength",
+   "equipment": [
+    "sled"
+   ],
+   "duration_min": 45,
+   "difficulty": "advanced",
+   "purpose": "Make race sled weight feel light by training well above it.",
+   "warmup": "10 min easy, 3 × 15 m building pushes.",
+   "blocks": [
+    {
+     "name": "Push",
+     "detail": "6 × 20 m at 130–150% of race weight. Full recovery, 2-3 min. Quality over grind."
+    },
+    {
+     "name": "Pull",
+     "detail": "6 × 20 m at 130% race weight, hand over hand. 2 min rest."
+    },
+    {
+     "name": "Accessory",
+     "detail": "Heavy walking lunge 3 × 20 m."
+    }
+   ],
+   "cooldown": "10 min easy walk, calf stretch.",
+   "scaling": {
+    "down": "110% race weight, 4 rounds each.",
+    "up": "Add 4 × 15 m at maximum movable weight."
+   }
+  },
+  {
+   "id": "str-09",
+   "name": "Grip and forearms",
+   "category": "strength",
+   "equipment": [
+    "kettlebells",
+    "pull-up bar"
+   ],
+   "duration_min": 35,
+   "difficulty": "beginner",
+   "purpose": "Grip is the limiter on carries and the sled pull for most people, and it's trainable fast.",
+   "warmup": "Wrist circles, band extensions, easy hangs.",
+   "blocks": [
+    {
+     "name": "Hangs",
+     "detail": "4 × max hold from the bar, 90 s rest. Log the times."
+    },
+    {
+     "name": "Carries",
+     "detail": "5 × 40 m farmers carry, heavy, resting 60 s. Then 3 × 30 m suitcase carry each side."
+    },
+    {
+     "name": "Finisher",
+     "detail": "Plate pinch hold 3 × 30 s each hand. Wrist curls 3 × 15."
+    }
+   ],
+   "cooldown": "Forearm stretch, both directions.",
+   "scaling": {
+    "down": "Lighter carries, banded hangs.",
+    "up": "Towel hangs and fat-grip carries."
+   }
+  },
+  {
+   "id": "str-10",
+   "name": "Lunge endurance",
+   "category": "strength",
+   "equipment": [
+    "sandbag",
+    "dumbbells"
+   ],
+   "duration_min": 40,
+   "difficulty": "advanced",
+   "purpose": "Build tolerance for 100 metres of loaded lunging when your legs are already gone.",
+   "warmup": "10 min easy, 20 bodyweight lunges, hip openers.",
+   "blocks": [
+    {
+     "name": "Main",
+     "detail": "5 × 40 m sandbag lunges at race weight, 2 min rest. Knee to the floor every rep, as the standard requires."
+    },
+    {
+     "name": "Accessory",
+     "detail": "Reverse lunge 3 × 12 each leg with dumbbells. Wall sit 3 × 45 s."
+    }
+   ],
+   "cooldown": "Quad and hip flexor stretch, 5 min.",
+   "scaling": {
+    "down": "4 × 25 m at 60% weight.",
+    "up": "4 × 75 m, or add a weighted vest."
+   }
+  },
+  {
+   "id": "str-11",
+   "name": "Trunk and anti-rotation",
+   "category": "strength",
+   "equipment": [
+    "kettlebells",
+    "med ball"
+   ],
+   "duration_min": 35,
+   "difficulty": "beginner",
+   "purpose": "A trunk that doesn't fold under load keeps your running form intact late on.",
+   "warmup": "Cat-cow, dead bug, bird dog, 3 min.",
+   "blocks": [
+    {
+     "name": "Circuit",
+     "detail": "4 rounds, 60 s rest between: 12 kettlebell suitcase deadlifts each side, 30 s side plank each side, 10 Pallof press each side, 15 hollow rocks."
+    },
+    {
+     "name": "Finisher",
+     "detail": "90 s hollow hold, broken as needed."
+    }
+   ],
+   "cooldown": "Child's pose and spinal twist.",
+   "scaling": {
+    "down": "3 rounds, knees down on planks.",
+    "up": "5 rounds, add weight to the planks."
+   }
+  },
+  {
+   "id": "str-12",
+   "name": "Power and jumps",
+   "category": "strength",
+   "equipment": [
+    "box",
+    "barbell"
+   ],
+   "duration_min": 45,
+   "difficulty": "advanced",
+   "purpose": "Explosiveness for burpee broad jumps and quicker ground contact when running.",
+   "warmup": "Skips, pogo hops, 10 min easy.",
+   "blocks": [
+    {
+     "name": "Jumps",
+     "detail": "5 × 3 box jumps, stepping down each rep. Then 4 × 4 broad jumps for maximum distance, full rest."
+    },
+    {
+     "name": "Lift",
+     "detail": "Hang power clean 5 × 3, or kettlebell swing 5 × 10 heavy."
+    },
+    {
+     "name": "Accessory",
+     "detail": "Split squat jump 3 × 6 each leg."
+    }
+   ],
+   "cooldown": "Calf and ankle mobility.",
+   "scaling": {
+    "down": "Step-ups and low box jumps, swap cleans for swings.",
+    "up": "Add depth jumps, 3 × 5."
+   }
+  },
+  {
+   "id": "str-13",
+   "name": "Dumbbell only",
+   "category": "strength",
+   "equipment": [
+    "dumbbells"
+   ],
+   "duration_min": 40,
+   "difficulty": "beginner",
+   "purpose": "A full-body session for a hotel gym or a garage with one rack of dumbbells.",
+   "warmup": "5 min skipping or jogging on the spot, mobility.",
+   "blocks": [
+    {
+     "name": "Circuit",
+     "detail": "4 rounds, 90 s rest: 10 goblet squats, 10 single-arm rows each side, 10 Romanian deadlifts, 10 push presses, 20 m walking lunge."
+    },
+    {
+     "name": "Finisher",
+     "detail": "3 × 30 s farmers hold with the heaviest pair available."
+    }
+   ],
+   "cooldown": "Full body stretch, 5 min.",
+   "scaling": {
+    "down": "3 rounds, lighter.",
+    "up": "5 rounds, add a 400 m run between rounds."
+   }
+  },
+  {
+   "id": "str-14",
+   "name": "Kettlebell complex",
+   "category": "strength",
+   "equipment": [
+    "kettlebells"
+   ],
+   "duration_min": 40,
+   "difficulty": "intermediate",
+   "purpose": "Strength with a heart rate cost — useful when you can't fit separate sessions in.",
+   "warmup": "Halos, hip hinges, 20 light swings.",
+   "blocks": [
+    {
+     "name": "Complex",
+     "detail": "5 rounds, no rest inside a round, 2 min between: 10 swings, 8 cleans each side, 6 front squats, 4 push presses each side, 40 m rack carry."
+    }
+   ],
+   "cooldown": "Shoulder and hip stretch.",
+   "scaling": {
+    "down": "3 rounds, lighter bell.",
+    "up": "6 rounds, double bells throughout."
+   }
+  },
+  {
+   "id": "str-15",
+   "name": "Strength endurance circuit",
+   "category": "strength",
+   "equipment": [
+    "barbell",
+    "wall ball",
+    "pull-up bar"
+   ],
+   "duration_min": 50,
+   "difficulty": "intermediate",
+   "purpose": "Heavy-ish weights at high reps — the exact quality the back half of a race asks for.",
+   "warmup": "10 min easy row, empty bar work.",
+   "blocks": [
+    {
+     "name": "Circuit",
+     "detail": "4 rounds, 2 min rest between rounds: 15 back squats at 40% of your best single, 15 wall balls, 12 barbell rows, 10 pull-ups, 20 m walking lunge."
+    }
+   ],
+   "cooldown": "10 min walk, full stretch.",
+   "scaling": {
+    "down": "3 rounds, drop reps to 10.",
+    "up": "5 rounds, 90 s rest."
+   }
+  },
+  {
+   "id": "stn-01",
+   "name": "SkiErg intervals",
+   "category": "station skills",
+   "equipment": [
+    "skierg"
+   ],
+   "duration_min": 35,
+   "difficulty": "intermediate",
+   "purpose": "Find and hold a 1000 m ski pace that doesn't blow the run that follows.",
+   "warmup": "500 m easy ski, 10 × 10 stroke build-ups.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "8 × 250 m at target race pace or faster, 60 s rest. Same split every rep — if rep 8 is slower, rep 1 was too fast."
+    },
+    {
+     "name": "Technique",
+     "detail": "2 × 200 m at half stroke rate, focusing on full hip hinge and a long finish."
+    }
+   ],
+   "cooldown": "300 m easy ski, lat stretch.",
+   "scaling": {
+    "down": "6 × 200 m, 90 s rest.",
+    "up": "10 × 250 m, 45 s rest."
+   }
+  },
+  {
+   "id": "stn-02",
+   "name": "Row five hundreds",
+   "category": "station skills",
+   "equipment": [
+    "rower"
+   ],
+   "duration_min": 40,
+   "difficulty": "intermediate",
+   "purpose": "Race-pace rowing with enough volume to make the pace automatic.",
+   "warmup": "500 m easy row, drills: legs only, legs and body, full stroke.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "6 × 500 m at target 1000 m race pace, 90 s rest. Hold stroke rate between 24 and 28."
+    },
+    {
+     "name": "Finisher",
+     "detail": "1 × 500 m all out. Log the split."
+    }
+   ],
+   "cooldown": "500 m easy row.",
+   "scaling": {
+    "down": "4 × 400 m.",
+    "up": "8 × 500 m, 60 s rest."
+   }
+  },
+  {
+   "id": "stn-03",
+   "name": "Wall ball volume",
+   "category": "station skills",
+   "equipment": [
+    "wall ball"
+   ],
+   "duration_min": 35,
+   "difficulty": "intermediate",
+   "purpose": "Get 100 unbroken reps within reach by training in big chunks.",
+   "warmup": "20 air squats, 15 light wall balls, ankle mobility.",
+   "blocks": [
+    {
+     "name": "Sets",
+     "detail": "5 × 25 wall balls at race weight, 90 s rest. Every rep to full depth and to the target line."
+    },
+    {
+     "name": "Skill",
+     "detail": "3 × 10 slow-tempo reps, catching in the squat rather than standing up first."
+    }
+   ],
+   "cooldown": "Quad, shoulder and ankle stretch.",
+   "scaling": {
+    "down": "5 × 15, or a lighter ball.",
+    "up": "4 × 35, 60 s rest."
+   }
+  },
+  {
+   "id": "stn-04",
+   "name": "Burpee broad jump pacing",
+   "category": "station skills",
+   "equipment": [
+    "none"
+   ],
+   "duration_min": 30,
+   "difficulty": "intermediate",
+   "purpose": "Find a rhythm you can hold for 80 m instead of sprinting 20 m and dying.",
+   "warmup": "10 min easy jog, 10 slow burpees, hip openers.",
+   "blocks": [
+    {
+     "name": "Pacing sets",
+     "detail": "4 × 20 m at a rhythm you could hold for 80 m, 90 s rest. Time each. Target: identical times."
+    },
+    {
+     "name": "Test",
+     "detail": "1 × 40 m for time. Compare against double your 20 m split."
+    }
+   ],
+   "cooldown": "Hip flexor and chest stretch.",
+   "scaling": {
+    "down": "Step-back burpees, 4 × 15 m.",
+    "up": "3 × 40 m with 2 min rest."
+   }
+  },
+  {
+   "id": "stn-05",
+   "name": "Sled push technique",
+   "category": "station skills",
+   "equipment": [
+    "sled"
+   ],
+   "duration_min": 40,
+   "difficulty": "beginner",
+   "purpose": "Body angle and step length decide sled speed far more than leg strength does.",
+   "warmup": "10 min easy, 3 × 15 m light pushes.",
+   "blocks": [
+    {
+     "name": "Technique",
+     "detail": "4 × 25 m light: low body angle, arms locked, short choppy steps, eyes down. Film one rep."
+    },
+    {
+     "name": "Race weight",
+     "detail": "5 × 25 m at race weight, 90 s rest. No stopping mid-length."
+    },
+    {
+     "name": "Overload",
+     "detail": "3 × 15 m at 120% race weight."
+    }
+   ],
+   "cooldown": "Calf and hip flexor stretch.",
+   "scaling": {
+    "down": "Technique work at 50% race weight only.",
+    "up": "6 × 50 m at race weight, 2 min rest."
+   }
+  },
+  {
+   "id": "stn-06",
+   "name": "Sled pull technique",
+   "category": "station skills",
+   "equipment": [
+    "sled"
+   ],
+   "duration_min": 40,
+   "difficulty": "intermediate",
+   "purpose": "Hand over hand, feet planted, back braced — and knowing when to walk it back.",
+   "warmup": "10 min easy, band rows, light pull reps.",
+   "blocks": [
+    {
+     "name": "Technique",
+     "detail": "4 × 12.5 m light, seated-back position, long hand-over-hand pulls, resetting the rope cleanly."
+    },
+    {
+     "name": "Race weight",
+     "detail": "5 × 25 m at race weight, 2 min rest. Practise the turn and the walk back to the rope."
+    },
+    {
+     "name": "Grip",
+     "detail": "3 × 30 s heavy hold on the rope."
+    }
+   ],
+   "cooldown": "Lat, forearm and lower back stretch.",
+   "scaling": {
+    "down": "60% race weight, shorter pulls.",
+    "up": "6 × 25 m at 120%."
+   }
+  },
+  {
+   "id": "stn-07",
+   "name": "Carry and grip block",
+   "category": "station skills",
+   "equipment": [
+    "kettlebells"
+   ],
+   "duration_min": 35,
+   "difficulty": "intermediate",
+   "purpose": "200 m of farmers carry with no drops. Grip endurance, not grip strength.",
+   "warmup": "Wrist and forearm prep, 2 × 25 m light carry.",
+   "blocks": [
+    {
+     "name": "Main",
+     "detail": "4 × 100 m at race weight, 2 min rest. Count drops — the goal is zero by the end of the block."
+    },
+    {
+     "name": "Overload",
+     "detail": "2 × 50 m at 120% race weight."
+    },
+    {
+     "name": "Finisher",
+     "detail": "3 × max hang from a bar."
+    }
+   ],
+   "cooldown": "Forearm stretch both directions.",
+   "scaling": {
+    "down": "4 × 50 m at 70% weight.",
+    "up": "3 × 200 m unbroken."
+   }
+  },
+  {
+   "id": "stn-08",
+   "name": "Sandbag lunge block",
+   "category": "station skills",
+   "equipment": [
+    "sandbag"
+   ],
+   "duration_min": 35,
+   "difficulty": "advanced",
+   "purpose": "Bag position and breathing rhythm under a load that makes both hard.",
+   "warmup": "20 bodyweight lunges, hip openers, 2 × 20 m light bag carry.",
+   "blocks": [
+    {
+     "name": "Technique",
+     "detail": "3 × 20 m at race weight, alternating bag position front rack and back. Find which holds up longer for you."
+    },
+    {
+     "name": "Volume",
+     "detail": "4 × 25 m at race weight, 90 s rest. Knee touches the floor every rep."
+    }
+   ],
+   "cooldown": "Quad, hip flexor and adductor stretch.",
+   "scaling": {
+    "down": "60% weight, 4 × 15 m.",
+    "up": "3 × 50 m, 2 min rest."
+   }
+  },
+  {
+   "id": "stn-09",
+   "name": "Ski and row couplet",
+   "category": "station skills",
+   "equipment": [
+    "skierg",
+    "rower"
+   ],
+   "duration_min": 40,
+   "difficulty": "intermediate",
+   "purpose": "Both ergs back to back, which is more upper-body fatigue than either alone.",
+   "warmup": "300 m easy on each machine.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "4 rounds: 500 m ski + 500 m row at race pace, 2 min rest between rounds. Transition in under 15 s."
+    }
+   ],
+   "cooldown": "400 m easy row, lat and shoulder stretch.",
+   "scaling": {
+    "down": "3 rounds of 400 m each.",
+    "up": "5 rounds, 90 s rest."
+   }
+  },
+  {
+   "id": "stn-10",
+   "name": "Station benchmark test",
+   "category": "station skills",
+   "equipment": [
+    "skierg",
+    "sled",
+    "rower",
+    "wall ball",
+    "sandbag",
+    "kettlebells"
+   ],
+   "duration_min": 60,
+   "difficulty": "advanced",
+   "purpose": "One hard effort at every station so you know your real splits, not your hoped-for ones.",
+   "warmup": "15 min: easy jog, light reps at each station.",
+   "blocks": [
+    {
+     "name": "Test",
+     "detail": "Each station once at race standard, for time, with 4 min rest between: 1000 m ski, 50 m sled push, 50 m sled pull, 80 m burpee broad jumps, 1000 m row, 200 m farmers carry, 100 m lunges, 100 wall balls."
+    }
+   ],
+   "cooldown": "15 min easy walk, full stretch.",
+   "scaling": {
+    "down": "Test four stations, the four you're weakest at.",
+    "up": "Cut rest to 2 min."
+   }
+  },
+  {
+   "id": "stn-11",
+   "name": "Wall ball ladder",
+   "category": "station skills",
+   "equipment": [
+    "wall ball"
+   ],
+   "duration_min": 30,
+   "difficulty": "advanced",
+   "purpose": "Train the ability to go unbroken deep into a set, not just to accumulate reps.",
+   "warmup": "20 air squats, 15 light reps.",
+   "blocks": [
+    {
+     "name": "Ladder",
+     "detail": "10, 15, 20, 25, 20, 15, 10 unbroken at race weight. Rest equal to the reps just done in seconds. Any break means repeat that rung once."
+    }
+   ],
+   "cooldown": "Shoulder and quad stretch.",
+   "scaling": {
+    "down": "5, 10, 15, 10, 5 with a lighter ball.",
+    "up": "15, 20, 30, 35, 30, 20, 15."
+   }
+  },
+  {
+   "id": "stn-12",
+   "name": "Erg pacing test",
+   "category": "station skills",
+   "equipment": [
+    "skierg",
+    "rower"
+   ],
+   "duration_min": 40,
+   "difficulty": "intermediate",
+   "purpose": "Two honest race-distance efforts to set your erg target paces from.",
+   "warmup": "500 m easy on each, build-ups.",
+   "blocks": [
+    {
+     "name": "Test",
+     "detail": "1000 m SkiErg for time. Rest 8 min. 1000 m row for time. Record split, stroke rate and how the last 250 m felt."
+    }
+   ],
+   "cooldown": "500 m easy, upper body stretch.",
+   "scaling": {
+    "down": "Test 750 m on each.",
+    "up": "Add a 500 m all-out on each after 5 min rest."
+   }
+  },
+  {
+   "id": "stn-13",
+   "name": "Sled doubles",
+   "category": "station skills",
+   "equipment": [
+    "sled"
+   ],
+   "duration_min": 45,
+   "difficulty": "advanced",
+   "purpose": "Push and pull back to back, the way the race gives it to you.",
+   "warmup": "10 min easy jog, light sled work both directions.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "5 rounds: 25 m push + 25 m pull at race weight, 2 min rest. Keep the transition tight — walk to the rope with purpose."
+    },
+    {
+     "name": "Finisher",
+     "detail": "2 rounds at 110% race weight, full rest."
+    }
+   ],
+   "cooldown": "10 min walk, calf and lat stretch.",
+   "scaling": {
+    "down": "4 rounds at 70% weight.",
+    "up": "6 rounds of 50 m each, 90 s rest."
+   }
+  },
+  {
+   "id": "stn-14",
+   "name": "Quad pre-fatigue block",
+   "category": "station skills",
+   "equipment": [
+    "sandbag",
+    "wall ball"
+   ],
+   "duration_min": 40,
+   "difficulty": "advanced",
+   "purpose": "The last two stations come after everything else. Train them already tired.",
+   "warmup": "10 min easy, 20 air squats, light reps.",
+   "blocks": [
+    {
+     "name": "Pre-fatigue",
+     "detail": "3 min of air squats and wall sits, continuous."
+    },
+    {
+     "name": "Main set",
+     "detail": "3 rounds: 25 m sandbag lunges + 25 wall balls at race weight, 2 min rest."
+    }
+   ],
+   "cooldown": "Quad and hip flexor stretch, 10 min walk.",
+   "scaling": {
+    "down": "2 rounds, 60% loads.",
+    "up": "4 rounds, 50 m lunges and 35 wall balls."
+   }
+  },
+  {
+   "id": "stn-15",
+   "name": "Burpee and ski combo",
+   "category": "station skills",
+   "equipment": [
+    "skierg"
+   ],
+   "duration_min": 35,
+   "difficulty": "intermediate",
+   "purpose": "Upper body under fatigue, with the breathing pattern that makes the ski feel worse than it is.",
+   "warmup": "400 m easy ski, 10 slow burpees.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "5 rounds: 15 m burpee broad jumps + 250 m ski hard, 90 s rest. Keep the ski split steady across all five."
+    }
+   ],
+   "cooldown": "400 m easy ski, chest and shoulder stretch.",
+   "scaling": {
+    "down": "4 rounds, 10 m and 200 m.",
+    "up": "6 rounds, 20 m and 300 m, 60 s rest."
+   }
+  },
+  {
+   "id": "con-01",
+   "name": "Thirty thirties",
+   "category": "conditioning",
+   "equipment": [
+    "rower"
+   ],
+   "duration_min": 35,
+   "difficulty": "intermediate",
+   "purpose": "Classic aerobic power intervals — lots of hard work, manageable fatigue.",
+   "warmup": "8 min easy row with 3 build-ups.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "3 sets of 10 × (30 s hard / 30 s easy), 3 min rest between sets. Hard means faster than race pace, easy means still rowing."
+    }
+   ],
+   "cooldown": "5 min easy row.",
+   "scaling": {
+    "down": "2 sets.",
+    "up": "4 sets, or 40 s on and 20 s off."
+   }
+  },
+  {
+   "id": "con-02",
+   "name": "Twenty minute EMOM",
+   "category": "conditioning",
+   "equipment": [
+    "rower",
+    "kettlebells",
+    "wall ball"
+   ],
+   "duration_min": 30,
+   "difficulty": "intermediate",
+   "purpose": "Forced pacing — the clock decides your rest, so the work has to stay efficient.",
+   "warmup": "8 min easy mixed movement.",
+   "blocks": [
+    {
+     "name": "EMOM 20",
+     "detail": "Minute 1: 15 cal row. Minute 2: 15 wall balls. Minute 3: 15 kettlebell swings. Minute 4: 12 burpees. Repeat five times through."
+    }
+   ],
+   "cooldown": "5 min walk, stretch.",
+   "scaling": {
+    "down": "12 minutes, drop reps by a third.",
+    "up": "24 minutes, add 3 reps to each."
+   }
+  },
+  {
+   "id": "con-03",
+   "name": "Twenty minute AMRAP",
+   "category": "conditioning",
+   "equipment": [
+    "rower",
+    "dumbbells"
+   ],
+   "duration_min": 35,
+   "difficulty": "intermediate",
+   "purpose": "A repeatable benchmark. Log the rounds and retest in 8 weeks.",
+   "warmup": "10 min easy, light reps of each movement.",
+   "blocks": [
+    {
+     "name": "AMRAP 20",
+     "detail": "250 m row, 15 dumbbell thrusters, 10 burpees, 20 m walking lunge. As many rounds as possible in 20 min. Pace it so round 6 matches round 1."
+    }
+   ],
+   "cooldown": "8 min easy walk.",
+   "scaling": {
+    "down": "AMRAP 12, lighter dumbbells.",
+    "up": "AMRAP 25, heavier."
+   }
+  },
+  {
+   "id": "con-04",
+   "name": "Chipper",
+   "category": "conditioning",
+   "equipment": [
+    "skierg",
+    "rower",
+    "wall ball",
+    "kettlebells"
+   ],
+   "duration_min": 40,
+   "difficulty": "advanced",
+   "purpose": "One long grind through a fixed list — mentally close to a race.",
+   "warmup": "10 min easy, light reps of everything.",
+   "blocks": [
+    {
+     "name": "For time",
+     "detail": "1000 m row, 60 wall balls, 800 m ski, 50 kettlebell swings, 600 m run, 40 burpees, 400 m run. Straight through, no planned rest."
+    }
+   ],
+   "cooldown": "10 min walk, full stretch.",
+   "scaling": {
+    "down": "Halve every number.",
+    "up": "Add 100 m farmers carry between each block."
+   }
+  },
+  {
+   "id": "con-05",
+   "name": "Kettlebell and erg couplet",
+   "category": "conditioning",
+   "equipment": [
+    "rower",
+    "kettlebells"
+   ],
+   "duration_min": 30,
+   "difficulty": "beginner",
+   "purpose": "Simple, repeatable, hard. Good for a short midweek engine hit.",
+   "warmup": "5 min easy row, 20 light swings.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "5 rounds: 400 m row + 20 kettlebell swings, 90 s rest. Same row split every round."
+    }
+   ],
+   "cooldown": "5 min easy row.",
+   "scaling": {
+    "down": "4 rounds of 300 m and 15 swings.",
+    "up": "6 rounds, 60 s rest."
+   }
+  },
+  {
+   "id": "con-06",
+   "name": "Erg threshold blocks",
+   "category": "conditioning",
+   "equipment": [
+    "rower"
+   ],
+   "duration_min": 45,
+   "difficulty": "intermediate",
+   "purpose": "Sustained aerobic work without the impact cost of more running.",
+   "warmup": "10 min easy row with drills.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "4 × 5 min at threshold, 2 min easy between. Stroke rate 24-26, split within 2 s across all four."
+    }
+   ],
+   "cooldown": "8 min easy row.",
+   "scaling": {
+    "down": "3 × 4 min.",
+    "up": "5 × 6 min, 90 s rest."
+   }
+  },
+  {
+   "id": "con-07",
+   "name": "Bike sprints",
+   "category": "conditioning",
+   "equipment": [
+    "bike erg"
+   ],
+   "duration_min": 30,
+   "difficulty": "advanced",
+   "purpose": "Maximum effort with minimum soreness — useful in heavy running weeks.",
+   "warmup": "10 min easy spin with 4 × 10 s build-ups.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "10 × 20 s maximum effort, 100 s easy spin between. Watts should not drop more than 10% from sprint 1 to sprint 10."
+    }
+   ],
+   "cooldown": "8 min easy spin.",
+   "scaling": {
+    "down": "6 sprints, 2 min recovery.",
+    "up": "12 sprints, or 30 s efforts."
+   }
+  },
+  {
+   "id": "con-08",
+   "name": "Death by burpees",
+   "category": "conditioning",
+   "equipment": [
+    "none"
+   ],
+   "duration_min": 25,
+   "difficulty": "intermediate",
+   "purpose": "A brutal, equipment-free benchmark that fits anywhere.",
+   "warmup": "8 min easy movement, 10 slow burpees.",
+   "blocks": [
+    {
+     "name": "Main",
+     "detail": "Minute 1: 1 burpee. Minute 2: 2 burpees. Continue adding one each minute until you can't finish the round inside the minute. Note the round you reached."
+    }
+   ],
+   "cooldown": "5 min walk, chest and hip stretch.",
+   "scaling": {
+    "down": "Start at 3 and add one every minute.",
+    "up": "Start at 5, or use burpee broad jumps."
+   }
+  },
+  {
+   "id": "con-09",
+   "name": "Tabata mix",
+   "category": "conditioning",
+   "equipment": [
+    "rower",
+    "wall ball"
+   ],
+   "duration_min": 30,
+   "difficulty": "beginner",
+   "purpose": "Short, sharp, and over quickly when time is tight.",
+   "warmup": "8 min easy, light reps.",
+   "blocks": [
+    {
+     "name": "Four tabatas",
+     "detail": "Each is 8 × (20 s hard / 10 s rest), 1 min between tabatas: row for calories, wall balls, air squats, burpees."
+    }
+   ],
+   "cooldown": "5 min walk.",
+   "scaling": {
+    "down": "Three tabatas.",
+    "up": "Six tabatas, add ski and kettlebell swings."
+   }
+  },
+  {
+   "id": "con-10",
+   "name": "Descending ladder",
+   "category": "conditioning",
+   "equipment": [
+    "rower",
+    "wall ball"
+   ],
+   "duration_min": 35,
+   "difficulty": "intermediate",
+   "purpose": "Work shrinks as fatigue grows, so intensity has to rise.",
+   "warmup": "10 min easy, light reps.",
+   "blocks": [
+    {
+     "name": "For time",
+     "detail": "500 m row and 30 wall balls, then 400 m and 25, then 300 m and 20, then 200 m and 15, then 100 m and 10. No rest."
+    }
+   ],
+   "cooldown": "8 min easy.",
+   "scaling": {
+    "down": "Start at 400 m and 20 reps.",
+    "up": "Start at 700 m and 40 reps."
+   }
+  },
+  {
+   "id": "con-11",
+   "name": "Engine builder",
+   "category": "conditioning",
+   "equipment": [
+    "skierg",
+    "rower",
+    "bike erg"
+   ],
+   "duration_min": 60,
+   "difficulty": "intermediate",
+   "purpose": "An hour of steady mixed-modal work. Boring on purpose, and it builds the base everything else sits on.",
+   "warmup": "Built in — start easy.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "6 rounds of 10 min, rotating ski, row, bike. Steady zone 2 the whole way, no stopping between machines. Heart rate should stay under 75% max."
+    }
+   ],
+   "cooldown": "5 min easy spin.",
+   "scaling": {
+    "down": "40 min total.",
+    "up": "75 min, add a 1 km run between rounds."
+   }
+  },
+  {
+   "id": "con-12",
+   "name": "Alternating intervals",
+   "category": "conditioning",
+   "equipment": [
+    "rower",
+    "skierg"
+   ],
+   "duration_min": 40,
+   "difficulty": "intermediate",
+   "purpose": "Switching machines every interval keeps intensity high while local fatigue clears.",
+   "warmup": "300 m easy on each machine.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "12 × 90 s hard, alternating ski and row, 60 s rest. Log the distance for each — the last should be within 5% of the first."
+    }
+   ],
+   "cooldown": "400 m easy.",
+   "scaling": {
+    "down": "8 intervals, 90 s rest.",
+    "up": "16 intervals, 45 s rest."
+   }
+  },
+  {
+   "id": "con-13",
+   "name": "Three eight minute blocks",
+   "category": "conditioning",
+   "equipment": [
+    "rower",
+    "wall ball",
+    "kettlebells"
+   ],
+   "duration_min": 40,
+   "difficulty": "advanced",
+   "purpose": "Race-length intensity in repeatable chunks, with enough rest to hit each one hard.",
+   "warmup": "10 min easy, light reps.",
+   "blocks": [
+    {
+     "name": "Block 1",
+     "detail": "AMRAP 8: 250 m row, 15 wall balls."
+    },
+    {
+     "name": "Rest",
+     "detail": "4 min complete rest."
+    },
+    {
+     "name": "Block 2",
+     "detail": "AMRAP 8: 20 kettlebell swings, 15 burpees."
+    },
+    {
+     "name": "Rest",
+     "detail": "4 min complete rest."
+    },
+    {
+     "name": "Block 3",
+     "detail": "AMRAP 8: 400 m run, 20 m walking lunge."
+    }
+   ],
+   "cooldown": "8 min walk.",
+   "scaling": {
+    "down": "6 min blocks.",
+    "up": "10 min blocks, 3 min rest."
+   }
+  },
+  {
+   "id": "con-14",
+   "name": "Machine triathlon",
+   "category": "conditioning",
+   "equipment": [
+    "skierg",
+    "rower",
+    "bike erg"
+   ],
+   "duration_min": 35,
+   "difficulty": "intermediate",
+   "purpose": "One continuous effort across all three machines — a fair test of raw engine.",
+   "warmup": "5 min easy on each.",
+   "blocks": [
+    {
+     "name": "For time",
+     "detail": "2000 m row, 2000 m ski, 5000 m bike, straight through. Even effort, not even pace — the ski will feel hardest."
+    }
+   ],
+   "cooldown": "8 min easy spin.",
+   "scaling": {
+    "down": "1000 m, 1000 m, 3000 m.",
+    "up": "Repeat the whole thing in reverse after 5 min rest."
+   }
+  },
+  {
+   "id": "con-15",
+   "name": "Swings and rows",
+   "category": "conditioning",
+   "equipment": [
+    "rower",
+    "kettlebells"
+   ],
+   "duration_min": 30,
+   "difficulty": "beginner",
+   "purpose": "Posterior chain conditioning that carries straight into the sled pull.",
+   "warmup": "5 min easy row, 20 light swings.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "6 rounds: 250 m row hard + 15 heavy kettlebell swings, 60 s rest."
+    }
+   ],
+   "cooldown": "5 min easy row, hamstring stretch.",
+   "scaling": {
+    "down": "4 rounds, lighter bell.",
+    "up": "8 rounds, 45 s rest."
+   }
+  },
+  {
+   "id": "con-16",
+   "name": "Bodyweight only",
+   "category": "conditioning",
+   "equipment": [
+    "none"
+   ],
+   "duration_min": 30,
+   "difficulty": "beginner",
+   "purpose": "For a hotel room or a travel day, with nothing but floor space.",
+   "warmup": "5 min marching, leg swings, arm circles.",
+   "blocks": [
+    {
+     "name": "Circuit",
+     "detail": "5 rounds, 90 s rest: 20 air squats, 15 push-ups, 10 burpees, 20 walking lunges, 30 s plank."
+    }
+   ],
+   "cooldown": "5 min stretch.",
+   "scaling": {
+    "down": "3 rounds, knee push-ups.",
+    "up": "7 rounds, add jump squats."
+   }
+  },
+  {
+   "id": "con-17",
+   "name": "Travel dumbbell session",
+   "category": "conditioning",
+   "equipment": [
+    "dumbbells"
+   ],
+   "duration_min": 35,
+   "difficulty": "intermediate",
+   "purpose": "One pair of dumbbells, a full-body hit, no machines needed.",
+   "warmup": "5 min skipping or jogging on the spot.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "5 rounds, 2 min rest: 12 dumbbell thrusters, 12 renegade rows, 20 m dumbbell lunge, 10 burpees over the dumbbells."
+    }
+   ],
+   "cooldown": "5 min stretch.",
+   "scaling": {
+    "down": "3 rounds, lighter.",
+    "up": "6 rounds, 90 s rest."
+   }
+  },
+  {
+   "id": "con-18",
+   "name": "Five rounds for time",
+   "category": "conditioning",
+   "equipment": [
+    "rower",
+    "pull-up bar",
+    "wall ball"
+   ],
+   "duration_min": 35,
+   "difficulty": "intermediate",
+   "purpose": "A simple benchmark you can retest all year.",
+   "warmup": "10 min easy, light reps.",
+   "blocks": [
+    {
+     "name": "For time",
+     "detail": "5 rounds: 400 m row, 20 wall balls, 10 pull-ups. No planned rest. Log the total and the split per round."
+    }
+   ],
+   "cooldown": "8 min easy.",
+   "scaling": {
+    "down": "4 rounds, ring rows instead of pull-ups.",
+    "up": "6 rounds, add a weighted vest."
+   }
+  },
+  {
+   "id": "con-19",
+   "name": "Erg pyramid",
+   "category": "conditioning",
+   "equipment": [
+    "rower"
+   ],
+   "duration_min": 40,
+   "difficulty": "intermediate",
+   "purpose": "Changing interval lengths so you never settle into one comfortable rhythm.",
+   "warmup": "8 min easy row.",
+   "blocks": [
+    {
+     "name": "Pyramid",
+     "detail": "250 m, 500 m, 750 m, 1000 m, 750 m, 500 m, 250 m. Rest equal to half the time of the piece just rowed. Longer pieces at race pace, short ones faster."
+    }
+   ],
+   "cooldown": "6 min easy row.",
+   "scaling": {
+    "down": "Top out at 750 m.",
+    "up": "Top out at 1500 m."
+   }
+  },
+  {
+   "id": "con-20",
+   "name": "Long mixed grind",
+   "category": "conditioning",
+   "equipment": [
+    "skierg",
+    "rower",
+    "sled",
+    "kettlebells"
+   ],
+   "duration_min": 90,
+   "difficulty": "advanced",
+   "purpose": "Deliberately long low-intensity mixed work to build durability for race day's back half.",
+   "warmup": "10 min easy jog.",
+   "blocks": [
+    {
+     "name": "Main set",
+     "detail": "6 rounds at a steady, conversational pace: 1 km run, 500 m row, 500 m ski, 50 m sled push at 50% race weight, 100 m farmers carry. Keep heart rate under 80% throughout — if it climbs, slow down."
+    }
+   ],
+   "cooldown": "10 min walk, full stretch.",
+   "scaling": {
+    "down": "4 rounds.",
+    "up": "8 rounds, or sled at 75% race weight."
+   }
+  },
+  {
+   "id": "sim-01",
+   "name": "Full race simulation",
+   "category": "simulation",
+   "equipment": [
+    "skierg",
+    "sled",
+    "rower",
+    "wall ball",
+    "sandbag",
+    "kettlebells"
+   ],
+   "duration_min": 110,
+   "difficulty": "advanced",
+   "purpose": "The whole thing at race standard. Do this two or three times in a build, no more.",
+   "warmup": "20 min: easy jog building to race pace, light reps at each station, mobility.",
+   "blocks": [
+    {
+     "name": "Race",
+     "detail": "8 × 1 km runs alternating with: 1000 m ski, 50 m sled push, 50 m sled pull, 80 m burpee broad jumps, 1000 m row, 200 m farmers carry, 100 m sandbag lunges, 100 wall balls. Race weights. Log every split including roxzone time."
+    }
+   ],
+   "cooldown": "15 min walk, full stretch, refuel within 30 min.",
+   "scaling": {
+    "down": "Use 70% station weights and keep the full distances.",
+    "up": "Pro weights, or add a weighted vest for the runs."
+   }
+  },
+  {
+   "id": "sim-02",
+   "name": "Negative split sim",
+   "category": "simulation",
+   "equipment": [
+    "skierg",
+    "sled",
+    "rower",
+    "wall ball",
+    "sandbag",
+    "kettlebells"
+   ],
+   "duration_min": 110,
+   "difficulty": "advanced",
+   "purpose": "Full distance with a strict pacing rule — finish faster than you start.",
+   "warmup": "20 min as for a race.",
+   "blocks": [
+    {
+     "name": "Race",
+     "detail": "Full sim, but the first four runs are capped 15 s per km slower than race pace. Runs 5 to 8 must each be faster than the one before. Discipline early is the whole session."
+    }
+   ],
+   "cooldown": "15 min walk, refuel.",
+   "scaling": {
+    "down": "Half sim with the same rule.",
+    "up": "Cap the first four runs 20 s slower, then negative split harder."
+   }
+  },
+  {
+   "id": "sim-03",
+   "name": "Front half sim",
+   "category": "simulation",
+   "equipment": [
+    "skierg",
+    "sled",
+    "rower"
+   ],
+   "duration_min": 60,
+   "difficulty": "intermediate",
+   "purpose": "Runs one to four and the first four stations, at full race intensity.",
+   "warmup": "15 min easy jog, light station reps.",
+   "blocks": [
+    {
+     "name": "Race",
+     "detail": "1 km + 1000 m ski, 1 km + 50 m sled push, 1 km + 50 m sled pull, 1 km + 80 m burpee broad jumps. Race weights, race pace, full transitions."
+    }
+   ],
+   "cooldown": "10 min walk.",
+   "scaling": {
+    "down": "70% sled weight, 50 m burpee broad jumps.",
+    "up": "Follow with a 2 km time trial."
+   }
+  },
+  {
+   "id": "sim-04",
+   "name": "Back half sim",
+   "category": "simulation",
+   "equipment": [
+    "rower",
+    "wall ball",
+    "sandbag",
+    "kettlebells"
+   ],
+   "duration_min": 60,
+   "difficulty": "advanced",
+   "purpose": "The half most people neglect, trained fresh so you can actually work on it.",
+   "warmup": "15 min easy jog, light station reps.",
+   "blocks": [
+    {
+     "name": "Race",
+     "detail": "1 km + 1000 m row, 1 km + 200 m farmers carry, 1 km + 100 m sandbag lunges, 1 km + 100 wall balls. Race weights and pace."
+    }
+   ],
+   "cooldown": "10 min walk, quad stretch.",
+   "scaling": {
+    "down": "70% weights, halve the carry and lunge distances.",
+    "up": "Start with 20 min of steady running to pre-fatigue."
+   }
+  },
+  {
+   "id": "sim-05",
+   "name": "Doubles format solo",
+   "category": "simulation",
+   "equipment": [
+    "skierg",
+    "sled",
+    "rower",
+    "wall ball",
+    "sandbag",
+    "kettlebells"
+   ],
+   "duration_min": 75,
+   "difficulty": "intermediate",
+   "purpose": "Half the station volume, full runs — high intensity, lower total damage.",
+   "warmup": "15 min as for a race.",
+   "blocks": [
+    {
+     "name": "Race",
+     "detail": "Full 8 × 1 km runs, but half volume at every station: 500 m ski, 25 m sled push, 25 m pull, 40 m burpee broad jumps, 500 m row, 100 m carry, 50 m lunges, 50 wall balls. Push the runs harder than race pace."
+    }
+   ],
+   "cooldown": "10 min walk.",
+   "scaling": {
+    "down": "Four runs and four stations.",
+    "up": "Full station volume on the last two."
+   }
+  },
+  {
+   "id": "sim-06",
+   "name": "Pro weight partial",
+   "category": "simulation",
+   "equipment": [
+    "sled",
+    "sandbag",
+    "wall ball",
+    "kettlebells"
+   ],
+   "duration_min": 60,
+   "difficulty": "advanced",
+   "purpose": "Heavy exposure at short distances, so open weights feel light on race day.",
+   "warmup": "15 min, thorough — the loads are high.",
+   "blocks": [
+    {
+     "name": "Race",
+     "detail": "4 rounds: 1 km run + one station at pro weight and half distance. Rotate sled push, sled pull, farmers carry, sandbag lunges. Full rest if a set breaks down."
+    }
+   ],
+   "cooldown": "10 min walk, full stretch.",
+   "scaling": {
+    "down": "Use open weights at full distance instead.",
+    "up": "Pro weights at full distance."
+   }
+  },
+  {
+   "id": "sim-07",
+   "name": "Broken sim",
+   "category": "simulation",
+   "equipment": [
+    "skierg",
+    "sled",
+    "rower",
+    "wall ball",
+    "sandbag",
+    "kettlebells"
+   ],
+   "duration_min": 100,
+   "difficulty": "intermediate",
+   "purpose": "Full race volume split in two, so you can hit race intensity without a full recovery week after.",
+   "warmup": "15 min race warm-up.",
+   "blocks": [
+    {
+     "name": "Block 1",
+     "detail": "Runs 1 to 4 with their stations, at race pace."
+    },
+    {
+     "name": "Rest",
+     "detail": "10 min complete rest. Eat and drink as you would mid-race if it were legal — practise taking on fuel."
+    },
+    {
+     "name": "Block 2",
+     "detail": "Runs 5 to 8 with their stations, at race pace or faster."
+    }
+   ],
+   "cooldown": "10 min walk.",
+   "scaling": {
+    "down": "15 min rest between blocks.",
+    "up": "5 min rest."
+   }
+  },
+  {
+   "id": "sim-08",
+   "name": "Stations only time trial",
+   "category": "simulation",
+   "equipment": [
+    "skierg",
+    "sled",
+    "rower",
+    "wall ball",
+    "sandbag",
+    "kettlebells"
+   ],
+   "duration_min": 60,
+   "difficulty": "advanced",
+   "purpose": "Strip the runs out and find your true station total, plus how fast you transition.",
+   "warmup": "15 min, light reps everywhere.",
+   "blocks": [
+    {
+     "name": "Time trial",
+     "detail": "All 8 stations in race order, with 200 m shuttle runs between instead of 1 km. Race weights. Time the whole thing and each transition."
+    }
+   ],
+   "cooldown": "10 min walk.",
+   "scaling": {
+    "down": "Six stations, 70% weights.",
+    "up": "No shuttles — straight from one station to the next."
+   }
+  },
+  {
+   "id": "sim-09",
+   "name": "Fuelling rehearsal sim",
+   "category": "simulation",
+   "equipment": [
+    "skierg",
+    "sled",
+    "rower",
+    "wall ball",
+    "sandbag",
+    "kettlebells"
+   ],
+   "duration_min": 110,
+   "difficulty": "intermediate",
+   "purpose": "A full sim where the point is testing food, drink and timing rather than chasing a time.",
+   "warmup": "20 min, eating the exact pre-race meal 2-3 hours before.",
+   "blocks": [
+    {
+     "name": "Race",
+     "detail": "Full sim at 90% race effort. Take your planned carbs and fluid at the same points you would in the race. Record what you took, when, and how your stomach handled it."
+    }
+   ],
+   "cooldown": "15 min walk, then your planned recovery meal within 30 min. Write down what to change.",
+   "scaling": {
+    "down": "Half sim, same fuelling plan halved.",
+    "up": "Full race effort with the fuelling plan intact."
+   }
+  },
+  {
+   "id": "sim-10",
+   "name": "Race week opener",
+   "category": "simulation",
+   "equipment": [
+    "skierg",
+    "sled",
+    "wall ball"
+   ],
+   "duration_min": 35,
+   "difficulty": "beginner",
+   "purpose": "Three to four days out: touch race pace, stay sharp, take nothing out of the legs.",
+   "warmup": "10 min easy jog, mobility.",
+   "blocks": [
+    {
+     "name": "Opener",
+     "detail": "2 × (400 m run at race pace + 250 m ski + 15 wall balls + 25 m sled push at race weight), 3 min rest between. Everything crisp, nothing near failure."
+    }
+   ],
+   "cooldown": "10 min easy jog, stretch.",
+   "scaling": {
+    "down": "One round.",
+    "up": "Three rounds, still stopping well short of hard."
+   }
+  },
+  {
+   "id": "rec-01",
+   "name": "Hips and ankles",
+   "category": "recovery",
+   "equipment": [
+    "none"
+   ],
+   "duration_min": 25,
+   "difficulty": "beginner",
+   "purpose": "The two joints that limit squat depth on wall balls and lunges.",
+   "warmup": "5 min easy walk or spin.",
+   "blocks": [
+    {
+     "name": "Mobility",
+     "detail": "90/90 hip switches 10 each side. Couch stretch 90 s each. Deep squat hold 3 × 60 s. Ankle knee-to-wall 15 each side. Adductor rock backs 10 each."
+    }
+   ],
+   "cooldown": "3 min slow breathing in child's pose.",
+   "scaling": {
+    "down": "Halve the holds.",
+    "up": "Add loaded holds with a kettlebell."
+   }
+  },
+  {
+   "id": "rec-02",
+   "name": "Thoracic and shoulders",
+   "category": "recovery",
+   "equipment": [
+    "none"
+   ],
+   "duration_min": 25,
+   "difficulty": "beginner",
+   "purpose": "Overhead position for ski and wall balls, and undoing a week at a desk.",
+   "warmup": "Arm circles, band pull-aparts.",
+   "blocks": [
+    {
+     "name": "Mobility",
+     "detail": "Foam roll thoracic spine 2 min. Open book 10 each side. Wall slides 3 × 12. Lat stretch on a rack 60 s each. Thread the needle 8 each side."
+    }
+   ],
+   "cooldown": "2 min diaphragmatic breathing.",
+   "scaling": {
+    "down": "Skip the foam rolling if it's uncomfortable.",
+    "up": "Add hanging from a bar, 3 × 30 s."
+   }
+  },
+  {
+   "id": "rec-03",
+   "name": "Easy spin and stretch",
+   "category": "recovery",
+   "equipment": [
+    "bike erg"
+   ],
+   "duration_min": 35,
+   "difficulty": "beginner",
+   "purpose": "Blood flow without impact, the day after something hard.",
+   "warmup": "None needed.",
+   "blocks": [
+    {
+     "name": "Spin",
+     "detail": "25 min very easy, zone 1, nose breathing."
+    },
+    {
+     "name": "Stretch",
+     "detail": "10 min full lower body: quads, hamstrings, calves, hips, glutes. 45 s each."
+    }
+   ],
+   "cooldown": "Built in.",
+   "scaling": {
+    "down": "15 min spin.",
+    "up": "40 min spin, still easy."
+   }
+  },
+  {
+   "id": "rec-04",
+   "name": "Water recovery",
+   "category": "recovery",
+   "equipment": [
+    "pool"
+   ],
+   "duration_min": 30,
+   "difficulty": "beginner",
+   "purpose": "Zero impact movement that's genuinely restorative after a sim.",
+   "warmup": "5 min easy swimming or walking in the shallow end.",
+   "blocks": [
+    {
+     "name": "Main",
+     "detail": "20 min easy swimming, or pool walking and light jogging in chest-deep water. Stop well short of breathless."
+    }
+   ],
+   "cooldown": "5 min floating and stretching against the wall.",
+   "scaling": {
+    "down": "15 min.",
+    "up": "30 min with some easy pull sets."
+   }
+  },
+  {
+   "id": "rec-05",
+   "name": "Long walk",
+   "category": "recovery",
+   "equipment": [
+    "none"
+   ],
+   "duration_min": 60,
+   "difficulty": "beginner",
+   "purpose": "The most underrated recovery tool there is, and it costs nothing.",
+   "warmup": "None.",
+   "blocks": [
+    {
+     "name": "Walk",
+     "detail": "45–60 min outdoors at a comfortable pace. No podcast pace-pushing, no hills hunting. Just walk."
+    }
+   ],
+   "cooldown": "5 min calf and hip stretch when home.",
+   "scaling": {
+    "down": "30 min.",
+    "up": "90 min, or add a light pack."
+   }
+  },
+  {
+   "id": "rec-06",
+   "name": "Flow for athletes",
+   "category": "recovery",
+   "equipment": [
+    "none"
+   ],
+   "duration_min": 35,
+   "difficulty": "beginner",
+   "purpose": "Mobility with a breathing element, for the evening after a hard day.",
+   "warmup": "5 min cat-cow and easy movement.",
+   "blocks": [
+    {
+     "name": "Flow",
+     "detail": "Three rounds, moving slowly with the breath: downward dog, low lunge each side, pigeon each side, seated forward fold, supine twist each side. Hold each 45-60 s."
+    }
+   ],
+   "cooldown": "5 min lying still, breathing out longer than in.",
+   "scaling": {
+    "down": "Two rounds, shorter holds.",
+    "up": "Four rounds, add standing balance poses."
+   }
+  },
+  {
+   "id": "rec-07",
+   "name": "Foam roll protocol",
+   "category": "recovery",
+   "equipment": [
+    "foam roller"
+   ],
+   "duration_min": 20,
+   "difficulty": "beginner",
+   "purpose": "Targeted soft tissue work on the areas hybrid training beats up most.",
+   "warmup": "2 min easy movement.",
+   "blocks": [
+    {
+     "name": "Roll",
+     "detail": "90 s each: quads, IT band area, glutes, hamstrings, calves, lats, thoracic spine. Slow, pausing on tender spots and breathing out."
+    }
+   ],
+   "cooldown": "Light stretch of anything that was sore.",
+   "scaling": {
+    "down": "Lower body only.",
+    "up": "Add a lacrosse ball for feet and glutes."
+   }
+  },
+  {
+   "id": "rec-08",
+   "name": "Breathing downregulation",
+   "category": "recovery",
+   "equipment": [
+    "none"
+   ],
+   "duration_min": 15,
+   "difficulty": "beginner",
+   "purpose": "Shift out of training stress and sleep better, especially after evening sessions.",
+   "warmup": "None.",
+   "blocks": [
+    {
+     "name": "Protocol",
+     "detail": "5 min box breathing, 4 s in, 4 s hold, 4 s out, 4 s hold. Then 5 min with exhale twice as long as inhale. Then 5 min lying still doing nothing."
+    }
+   ],
+   "cooldown": "Built in.",
+   "scaling": {
+    "down": "10 min total.",
+    "up": "20 min, add legs up the wall."
+   }
+  },
+  {
+   "id": "rec-09",
+   "name": "Race morning activation",
+   "category": "recovery",
+   "equipment": [
+    "none"
+   ],
+   "duration_min": 20,
+   "difficulty": "beginner",
+   "purpose": "Wake the system up on race morning without touching your race energy.",
+   "warmup": "None.",
+   "blocks": [
+    {
+     "name": "Activation",
+     "detail": "5 min easy jog. Leg swings and hip openers. 10 air squats, 10 push-ups, 10 walking lunges. 4 × 15 s strides building to race pace. Then rest."
+    }
+   ],
+   "cooldown": "Stay warm, sit down, sip fluid.",
+   "scaling": {
+    "down": "Cut the strides.",
+    "up": "Add 2 × 20 s at faster than race pace."
+   }
+  },
+  {
+   "id": "rec-10",
+   "name": "Deload movement circuit",
+   "category": "recovery",
+   "equipment": [
+    "dumbbells"
+   ],
+   "duration_min": 30,
+   "difficulty": "beginner",
+   "purpose": "Keep the movement patterns alive during a deload week without adding fatigue.",
+   "warmup": "5 min easy movement.",
+   "blocks": [
+    {
+     "name": "Circuit",
+     "detail": "3 rounds at roughly 50% effort, resting as needed: 10 goblet squats light, 10 push-ups, 10 dumbbell rows each side, 10 glute bridges, 20 m easy carry, 30 s plank."
+    }
+   ],
+   "cooldown": "10 min stretch.",
+   "scaling": {
+    "down": "2 rounds, bodyweight only.",
+    "up": "4 rounds, still keeping effort low."
+   }
+  }
+ ]
+}

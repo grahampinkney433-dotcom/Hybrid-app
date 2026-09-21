@@ -23,7 +23,7 @@ export default function LibraryScreen({
   onLog,
   onAddToPlan,
 }: {
-  onLog: (prefill: { type: LogType; title: string; workoutId: string }) => void;
+  onLog: (prefill: { type: LogType; title: string; workoutId?: string }) => void;
   onAddToPlan?: (w: Workout) => void;
 }) {
   const [workouts, setWorkouts] = useState<Workout[] | null>(null);

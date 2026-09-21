@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { ScreenTitle, EmptyState } from '../components/ui';
+import { ScreenTitle } from '../components/ui';
 import LibraryScreen from './LibraryScreen';
+import PlansSection from './PlansSection';
 import type { LogType } from '../core/types';
 
 // The Plan tab hosts two things: the workout Library (browse/filter/add) and, from
@@ -10,7 +11,7 @@ type Section = 'library' | 'plans';
 export default function PlanScreen({
   onLog,
 }: {
-  onLog: (prefill: { type: LogType; title: string; workoutId: string }) => void;
+  onLog: (prefill: { type: LogType; title: string; workoutId?: string }) => void;
 }) {
   const [section, setSection] = useState<Section>('library');
 
@@ -26,14 +27,7 @@ export default function PlanScreen({
         </button>
       </div>
 
-      {section === 'library' ? (
-        <LibraryScreen onLog={onLog} />
-      ) : (
-        <EmptyState title="Plan building arrives next">
-          The questionnaire will generate a plan, and you'll be able to build your own —
-          adding any workout from the Library to a day.
-        </EmptyState>
-      )}
+      {section === 'library' ? <LibraryScreen onLog={onLog} /> : <PlansSection onLog={onLog} />}
     </>
   );
 }

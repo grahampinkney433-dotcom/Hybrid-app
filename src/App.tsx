@@ -1,6 +1,10 @@
-import { useEffect, useState } from 'react';
-import { ScreenTitle, EmptyState, Panel } from './components/ui';
-import { libraryCount, seedLibraryIfNeeded } from './data/seed';
+import { useEffect, useRef, useState } from 'react';
+import { ScreenTitle, EmptyState } from './components/ui';
+import { seedLibraryIfNeeded } from './data/seed';
+import TodayScreen from './screens/TodayScreen';
+import LogScreen from './screens/LogScreen';
+import HistoryScreen from './screens/HistoryScreen';
+import type { Log, LogType } from './core/types';
 
 // The five bottom-tab views, plus Settings (reached from the header).
 type View = 'today' | 'log' | 'plan' | 'fuel' | 'history' | 'settings';
@@ -13,13 +17,36 @@ const TABS: { id: View; label: string }[] = [
   { id: 'history', label: 'History' },
 ];
 
+// What the Log screen should open with: a fresh log, an edit, or a prefilled type/title.
+interface LogTarget {
+  editLog?: Log;
+  prefill?: { type?: LogType; title?: string };
+}
+
 export default function App() {
   const [view, setView] = useState<View>('today');
+  const [logTarget, setLogTarget] = useState<LogTarget>({});
+  const logKey = useRef(0); // bump to remount the Log screen with fresh state
 
-  // Scroll to top when the view changes (matches the prototype).
+  useEffect(() => {
+    seedLibraryIfNeeded().catch((err) => console.error('Library seed failed:', err));
+  }, []);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [view]);
+
+  // Open the Log screen with a given target (fresh, edit, or prefilled).
+  function openLog(target: LogTarget = {}) {
+    setLogTarget(target);
+    logKey.current += 1;
+    setView('log');
+  }
+
+  function go(next: View) {
+    if (next === 'log') openLog({});
+    else setView(next);
+  }
 
   return (
     <div className="min-h-screen">
@@ -38,7 +65,41 @@ export default function App() {
       </header>
 
       <main className="max-w-app mx-auto px-4 pt-[6px] pb-[110px]">
-        <Screen view={view} />
+        {view === 'today' && <TodayScreen onLog={() => openLog({})} />}
+        {view === 'log' && (
+          <LogScreen
+            key={logKey.current}
+            editLog={logTarget.editLog}
+            prefill={logTarget.prefill}
+            onSaved={(editing) => go(editing ? 'history' : 'today')}
+            onCancel={() => setView('history')}
+          />
+        )}
+        {view === 'history' && <HistoryScreen onEdit={(log) => openLog({ editLog: log })} />}
+        {view === 'plan' && (
+          <>
+            <ScreenTitle>Plan</ScreenTitle>
+            <EmptyState title="Plans arrive soon">
+              Generated and custom training plans will drive this screen.
+            </EmptyState>
+          </>
+        )}
+        {view === 'fuel' && (
+          <>
+            <ScreenTitle>Fuel</ScreenTitle>
+            <EmptyState title="Nutrition arrives soon">
+              Daily targets and the food diary will live here.
+            </EmptyState>
+          </>
+        )}
+        {view === 'settings' && (
+          <>
+            <ScreenTitle>Settings</ScreenTitle>
+            <EmptyState title="Settings arrive with the features">
+              Race details, backup/restore, theme and the disclaimer will live here.
+            </EmptyState>
+          </>
+        )}
       </main>
 
       <nav className="fixed inset-x-0 bottom-0 bg-panel border-t border-line z-10 pb-[env(safe-area-inset-bottom,0px)]">
@@ -47,12 +108,10 @@ export default function App() {
             <button
               key={t.id}
               type="button"
-              onClick={() => setView(t.id)}
+              onClick={() => go(t.id)}
               aria-current={view === t.id ? 'page' : undefined}
               className={`flex-1 py-[10px] pb-3 font-cond font-semibold text-base ${
-                view === t.id
-                  ? 'text-lane shadow-[inset_0_3px_0_var(--lane)]'
-                  : 'text-steel'
+                view === t.id ? 'text-lane shadow-[inset_0_3px_0_var(--lane)]' : 'text-steel'
               }`}
             >
               {t.label}
@@ -61,89 +120,5 @@ export default function App() {
         </div>
       </nav>
     </div>
-  );
-}
-
-// Placeholder screens for step 1. Each real feature lands in its own step; for now every
-// screen shows a clear empty state so the shell, navigation and data layer can be tested.
-function Screen({ view }: { view: View }) {
-  switch (view) {
-    case 'today':
-      return <TodayStub />;
-    case 'log':
-      return (
-        <>
-          <ScreenTitle>Log workout</ScreenTitle>
-          <EmptyState title="Workout logging arrives next">
-            The fast split-entry logger (with the race clock, RPE and heart rate) is the next
-            step.
-          </EmptyState>
-        </>
-      );
-    case 'plan':
-      return (
-        <>
-          <ScreenTitle>Plan</ScreenTitle>
-          <EmptyState title="Plans arrive soon">
-            Generated and custom training plans will drive this screen.
-          </EmptyState>
-        </>
-      );
-    case 'fuel':
-      return (
-        <>
-          <ScreenTitle>Fuel</ScreenTitle>
-          <EmptyState title="Nutrition arrives soon">
-            Daily targets and the food diary will live here.
-          </EmptyState>
-        </>
-      );
-    case 'history':
-      return (
-        <>
-          <ScreenTitle>History</ScreenTitle>
-          <EmptyState title="Nothing logged yet">
-            Your sessions and personal bests will appear here once logging is in.
-          </EmptyState>
-        </>
-      );
-    case 'settings':
-      return (
-        <>
-          <ScreenTitle>Settings</ScreenTitle>
-          <EmptyState title="Settings arrive with the features">
-            Race details, backup/restore, theme and the disclaimer will live here.
-          </EmptyState>
-        </>
-      );
-  }
-}
-
-// A tiny live check that the database + seed pipeline works end-to-end.
-function TodayStub() {
-  const [count, setCount] = useState<number | null>(null);
-  useEffect(() => {
-    // Wait for the (idempotent) seed to finish before counting, so a fresh install
-    // never briefly shows an empty library.
-    seedLibraryIfNeeded()
-      .then(libraryCount)
-      .then(setCount)
-      .catch(() => setCount(0));
-  }, []);
-  return (
-    <>
-      <ScreenTitle sub="Your foundation is set up. Features arrive step by step.">
-        Today
-      </ScreenTitle>
-      <Panel>
-        <h3 className="font-cond font-semibold text-xl m-0 mb-2">Setup check</h3>
-        <p className="m-0 text-sm text-steel">
-          Workout library loaded into on-device storage:{' '}
-          <strong className="text-graphite">
-            {count === null ? 'checking…' : `${count} workouts`}
-          </strong>
-        </p>
-      </Panel>
-    </>
   );
 }

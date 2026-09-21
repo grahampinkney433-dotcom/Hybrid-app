@@ -5,6 +5,7 @@ import TodayScreen from './screens/TodayScreen';
 import LogScreen from './screens/LogScreen';
 import HistoryScreen from './screens/HistoryScreen';
 import PlanScreen from './screens/PlanScreen';
+import FuelScreen from './screens/FuelScreen';
 import type { Log, LogType } from './core/types';
 
 // The five bottom-tab views, plus Settings (reached from the header).
@@ -78,14 +79,7 @@ export default function App() {
         )}
         {view === 'history' && <HistoryScreen onEdit={(log) => openLog({ editLog: log })} />}
         {view === 'plan' && <PlanScreen onLog={(prefill) => openLog({ prefill })} />}
-        {view === 'fuel' && (
-          <>
-            <ScreenTitle>Fuel</ScreenTitle>
-            <EmptyState title="Nutrition arrives soon">
-              Daily targets and the food diary will live here.
-            </EmptyState>
-          </>
-        )}
+        {view === 'fuel' && <FuelScreen />}
         {view === 'settings' && (
           <>
             <ScreenTitle>Settings</ScreenTitle>

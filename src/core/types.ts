@@ -158,18 +158,12 @@ export interface Food {
 }
 
 // One day's food diary. `date` is the primary key, so there is one entry per day.
+// Items reference a food (built-in or custom) by id, plus grams — the same shape as a
+// meal-plan item, so plans copy straight into a day.
 export interface DiaryEntry {
   date: string; // 'YYYY-MM-DD'
   dayType?: 'training' | 'rest'; // override; otherwise derived from that day's plan/logs
-  items: {
-    foodId?: string; // reference into built-in or custom foods
-    name?: string; // inline one-off food (when foodId is absent)
-    grams: number;
-    kcal?: number;
-    protein?: number;
-    carbs?: number;
-    fat?: number;
-  }[];
+  items: { foodId: string; grams: number }[];
   updatedAt: number;
 }
 

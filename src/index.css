@@ -285,6 +285,45 @@ body {
     font: 600 18px 'Barlow Condensed', sans-serif;
   }
 
+  /* Nutrition: macro bars, food rows, meals (from the prototype). */
+  .macro-bar {
+    height: 8px;
+    background: var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 4px 0 10px;
+  }
+  .macro-bar i {
+    display: block;
+    height: 100%;
+    background: var(--lane);
+  }
+  .macro-bar i.over {
+    background: var(--effort);
+  }
+  .food-row {
+    display: grid;
+    grid-template-columns: 1fr 72px 60px 26px;
+    gap: 6px;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  .food-row input {
+    padding: 5px 6px;
+  }
+  .add-food {
+    display: grid;
+    grid-template-columns: 1fr 72px auto;
+    gap: 6px;
+    margin-top: 6px;
+  }
+  .meal {
+    border-top: 1px solid var(--line);
+    padding-top: 10px;
+    margin-top: 10px;
+  }
+
   /* Volume / trend bars. */
   .bars {
     display: flex;

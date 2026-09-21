@@ -23,6 +23,7 @@ interface Draft {
   date: string;
   type: LogType;
   title: string;
+  workoutId?: string;
   durationMin: string;
   rpe: string;
   notes: string;
@@ -38,10 +39,11 @@ interface Draft {
 const emptyZones = () => ({ z1: '', z2: '', z3: '', z4: '', z5: '' });
 const emptySet = (): SetRow => ({ ex: '', sets: '', reps: '', kg: '' });
 
-function blankDraft(type: LogType = 'Race sim', title = ''): Draft {
+function blankDraft(prefill?: { type?: LogType; title?: string; workoutId?: string; notes?: string }): Draft {
   return {
-    id: uid(), editing: false, date: today(), type, title,
-    durationMin: '', rpe: '', notes: '', distanceKm: '', timeStr: '',
+    id: uid(), editing: false, date: today(),
+    type: prefill?.type ?? 'Race sim', title: prefill?.title ?? '', workoutId: prefill?.workoutId,
+    durationMin: '', rpe: '', notes: prefill?.notes ?? '', distanceKm: '', timeStr: '',
     splits: {}, sets: [emptySet()], hrAvg: '', hrMax: '', zones: emptyZones(),
   };
 }
@@ -54,7 +56,7 @@ function draftFromLog(log: Log): Draft {
   const splits: Record<string, string> = {};
   if (log.splits) for (const [k, v] of Object.entries(log.splits)) splits[k] = secToInput(v);
   return {
-    id: log.id, editing: true, date: log.date, type: log.type, title: log.title ?? '',
+    id: log.id, editing: true, date: log.date, type: log.type, title: log.title ?? '', workoutId: log.workoutId,
     durationMin: log.durationMin != null ? String(log.durationMin) : '',
     rpe: log.rpe != null ? String(log.rpe) : '',
     notes: log.notes ?? '',
@@ -119,6 +121,7 @@ function toLog(d: Draft): Log {
     date: d.date,
     type: d.type,
     title: d.title || undefined,
+    workoutId: d.workoutId,
     durationMin,
     rpe: numOrUndef(d.rpe),
     notes: d.notes || undefined,
@@ -143,12 +146,12 @@ export default function LogScreen({
   onCancel,
 }: {
   editLog?: Log;
-  prefill?: { type?: LogType; title?: string };
+  prefill?: { type?: LogType; title?: string; workoutId?: string; notes?: string };
   onSaved: (editing: boolean) => void;
   onCancel: () => void;
 }) {
   const [draft, setDraft] = useState<Draft>(() =>
-    editLog ? draftFromLog(editLog) : blankDraft(prefill?.type ?? 'Race sim', prefill?.title ?? ''),
+    editLog ? draftFromLog(editLog) : blankDraft(prefill),
   );
   const [profile, setProfile] = useState<Profile | undefined>();
   const [error, setError] = useState('');
@@ -170,7 +173,9 @@ export default function LogScreen({
 
   return (
     <>
-      <ScreenTitle>{draft.editing ? 'Edit workout' : 'Log workout'}</ScreenTitle>
+      <ScreenTitle sub={draft.title ? draft.title : undefined}>
+        {draft.editing ? 'Edit workout' : 'Log workout'}
+      </ScreenTitle>
 
       {/* Workout type */}
       <div className="seg-tabs" role="group" aria-label="Workout type">

@@ -28,6 +28,7 @@ export default function LogItem({ w }: { w: Log }) {
       <div className="min-w-0">
         <span className="tag">{w.type}</span>
         <span className="text-steel">{niceDate(w.date)}</span>
+        {w.title && <div className="font-cond font-semibold">{w.title}</div>}
         <div className="truncate">{logDetail(w)}</div>
       </div>
       <div className="text-right whitespace-nowrap">

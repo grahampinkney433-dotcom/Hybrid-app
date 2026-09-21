@@ -4,6 +4,7 @@ import { seedLibraryIfNeeded } from './data/seed';
 import TodayScreen from './screens/TodayScreen';
 import LogScreen from './screens/LogScreen';
 import HistoryScreen from './screens/HistoryScreen';
+import PlanScreen from './screens/PlanScreen';
 import type { Log, LogType } from './core/types';
 
 // The five bottom-tab views, plus Settings (reached from the header).
@@ -20,7 +21,7 @@ const TABS: { id: View; label: string }[] = [
 // What the Log screen should open with: a fresh log, an edit, or a prefilled type/title.
 interface LogTarget {
   editLog?: Log;
-  prefill?: { type?: LogType; title?: string };
+  prefill?: { type?: LogType; title?: string; workoutId?: string; notes?: string };
 }
 
 export default function App() {
@@ -76,14 +77,7 @@ export default function App() {
           />
         )}
         {view === 'history' && <HistoryScreen onEdit={(log) => openLog({ editLog: log })} />}
-        {view === 'plan' && (
-          <>
-            <ScreenTitle>Plan</ScreenTitle>
-            <EmptyState title="Plans arrive soon">
-              Generated and custom training plans will drive this screen.
-            </EmptyState>
-          </>
-        )}
+        {view === 'plan' && <PlanScreen onLog={(prefill) => openLog({ prefill })} />}
         {view === 'fuel' && (
           <>
             <ScreenTitle>Fuel</ScreenTitle>

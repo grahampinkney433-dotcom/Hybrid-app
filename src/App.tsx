@@ -1,14 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
-import { ScreenTitle, EmptyState } from './components/ui';
 import { seedLibraryIfNeeded } from './data/seed';
+import { getSettings, saveSettings } from './data/repo';
+import { applyTheme } from './lib/theme';
 import TodayScreen from './screens/TodayScreen';
 import LogScreen from './screens/LogScreen';
 import HistoryScreen from './screens/HistoryScreen';
 import PlanScreen from './screens/PlanScreen';
 import FuelScreen from './screens/FuelScreen';
-import type { Log, LogType } from './core/types';
+import SettingsScreen from './screens/SettingsScreen';
+import WelcomeScreen from './screens/WelcomeScreen';
+import type { Log, LogType, Settings } from './core/types';
 
-// The five bottom-tab views, plus Settings (reached from the header).
 type View = 'today' | 'log' | 'plan' | 'fuel' | 'history' | 'settings';
 
 const TABS: { id: View; label: string }[] = [
@@ -19,7 +21,6 @@ const TABS: { id: View; label: string }[] = [
   { id: 'history', label: 'History' },
 ];
 
-// What the Log screen should open with: a fresh log, an edit, or a prefilled type/title.
 interface LogTarget {
   editLog?: Log;
   prefill?: { type?: LogType; title?: string; workoutId?: string; notes?: string };
@@ -28,26 +29,45 @@ interface LogTarget {
 export default function App() {
   const [view, setView] = useState<View>('today');
   const [logTarget, setLogTarget] = useState<LogTarget>({});
-  const logKey = useRef(0); // bump to remount the Log screen with fresh state
+  const [settings, setSettings] = useState<Settings | undefined>();
+  const logKey = useRef(0);
 
   useEffect(() => {
     seedLibraryIfNeeded().catch((err) => console.error('Library seed failed:', err));
+    getSettings().then((s) => {
+      applyTheme(s?.theme);
+      setSettings(s ?? {});
+    });
   }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [view]);
 
-  // Open the Log screen with a given target (fresh, edit, or prefilled).
   function openLog(target: LogTarget = {}) {
     setLogTarget(target);
     logKey.current += 1;
     setView('log');
   }
-
   function go(next: View) {
     if (next === 'log') openLog({});
     else setView(next);
+  }
+
+  // Still loading settings — render nothing to avoid a flash of the wrong screen.
+  if (settings === undefined) return null;
+
+  // First run: show the welcome/disclaimer walkthrough until acknowledged.
+  if (!settings.disclaimerAcceptedAt) {
+    const accept = (dest: View) => {
+      const next = { ...settings, disclaimerAcceptedAt: Date.now() };
+      setSettings(next);
+      saveSettings(next);
+      setView(dest);
+    };
+    return (
+      <WelcomeScreen onAcceptAndSetup={() => accept('plan')} onAcceptAndExplore={() => accept('today')} />
+    );
   }
 
   return (
@@ -80,14 +100,7 @@ export default function App() {
         {view === 'history' && <HistoryScreen onEdit={(log) => openLog({ editLog: log })} />}
         {view === 'plan' && <PlanScreen onLog={(prefill) => openLog({ prefill })} />}
         {view === 'fuel' && <FuelScreen />}
-        {view === 'settings' && (
-          <>
-            <ScreenTitle>Settings</ScreenTitle>
-            <EmptyState title="Settings arrive with the features">
-              Race details, backup/restore, theme and the disclaimer will live here.
-            </EmptyState>
-          </>
-        )}
+        {view === 'settings' && <SettingsScreen />}
       </main>
 
       <nav className="fixed inset-x-0 bottom-0 bg-panel border-t border-line z-10 pb-[env(safe-area-inset-bottom,0px)]">

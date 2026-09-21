@@ -1,22 +1,29 @@
 import { useEffect, useState } from 'react';
 import { Panel, EmptyState } from '../components/ui';
 import QuestionnaireScreen from './QuestionnaireScreen';
+import PlanBuilder from './PlanBuilder';
 import type { Plan, LogType } from '../core/types';
-import { phaseNote, type Phase } from '../core/plan';
-import { getActivePlan } from '../data/repo';
+import { newBlankPlan, duplicatePlan } from '../core/planEdit';
+import { listPlans, savePlan, setActivePlan, deletePlan } from '../data/repo';
 
-// The "My plans" area of the Plan tab: shows the active generated plan, or the
-// questionnaire when there is none / the user wants to redo it. (Editing & custom
-// building arrive in step 5.)
+// The "My plans" area: choose/create/duplicate/delete plans, mark one active (drives
+// Today), edit the selected plan in the builder, or (re)generate from the questionnaire.
 export default function PlansSection({
   onLog,
 }: {
   onLog: (prefill: { type: LogType; title: string; workoutId?: string }) => void;
 }) {
-  const [plan, setPlan] = useState<Plan | null | undefined>(undefined);
+  const [plans, setPlans] = useState<Plan[] | undefined>(undefined);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
   const [mode, setMode] = useState<'view' | 'questionnaire'>('view');
 
-  const refresh = () => getActivePlan().then((p) => setPlan(p ?? null));
+  async function refresh(preferId?: string) {
+    const all = await listPlans();
+    setPlans(all);
+    const active = all.find((p) => p.isActive);
+    const keep = preferId && all.some((p) => p.id === preferId) ? preferId : null;
+    setSelectedId((cur) => keep ?? (cur && all.some((p) => p.id === cur) ? cur : active?.id ?? all[0]?.id ?? null));
+  }
   useEffect(() => {
     refresh();
   }, []);
@@ -24,88 +31,86 @@ export default function PlansSection({
   if (mode === 'questionnaire') {
     return (
       <QuestionnaireScreen
-        onDone={() => {
+        onDone={async () => {
+          await refresh();
           setMode('view');
-          refresh();
         }}
       />
     );
   }
 
-  if (plan === undefined) return <p className="text-steel">Loading…</p>;
+  if (plans === undefined) return <p className="text-steel">Loading…</p>;
 
-  if (plan === null) {
+  if (plans.length === 0) {
     return (
-      <EmptyState title="No plan yet">
-        Answer a few questions and Stationlog builds a week-by-week plan around your race,
-        level and equipment.
+      <EmptyState title="No plans yet">
+        Answer a few questions to generate a plan around your race, level and equipment —
+        or start a blank one and build it yourself.
         <br />
-        <button className="btn mt-3" onClick={() => setMode('questionnaire')}>Set up my plan</button>
+        <span className="flex gap-2 justify-center mt-3">
+          <button className="btn" onClick={() => setMode('questionnaire')}>Set up my plan</button>
+          <button className="btn ghost" onClick={async () => { const p = newBlankPlan(); await savePlan(p); await refresh(p.id); }}>
+            Blank plan
+          </button>
+        </span>
       </EmptyState>
     );
   }
 
+  const selected = plans.find((p) => p.id === selectedId) ?? plans[0];
+
+  const save = async (updated: Plan) => {
+    setPlans((ps) => ps?.map((p) => (p.id === updated.id ? updated : p)));
+    await savePlan(updated);
+  };
+
   return (
     <>
       <Panel>
-        <div className="flex justify-between items-start gap-2">
-          <div>
-            <h3 className="font-cond font-semibold text-xl m-0">{plan.name}</h3>
-            <p className="text-steel text-sm m-0 mt-1">{phaseNote((plan.meta?.phase as Phase) ?? 'base')}</p>
-          </div>
-          <button className="btn ghost small whitespace-nowrap" onClick={() => setMode('questionnaire')}>
-            Re-run
+        <label className="field-label" htmlFor="plan-select">Plan</label>
+        <select
+          id="plan-select"
+          className="field mb-2"
+          value={selected.id}
+          onChange={(e) => setSelectedId(e.target.value)}
+        >
+          {plans.map((p) => (
+            <option key={p.id} value={p.id}>
+              {p.name}
+              {p.isActive ? ' — active' : ''}
+            </option>
+          ))}
+        </select>
+
+        <div className="flex flex-wrap gap-2">
+          {selected.isActive ? (
+            <span className="text-ok text-sm font-semibold self-center">✓ Active (drives Today)</span>
+          ) : (
+            <button className="btn small" onClick={async () => { await setActivePlan(selected.id); await refresh(selected.id); }}>
+              Make active
+            </button>
+          )}
+          <button className="btn ghost small" onClick={async () => { const p = duplicatePlan(selected); await savePlan(p); await refresh(p.id); }}>
+            Duplicate
+          </button>
+          <button className="btn ghost small" onClick={async () => { const p = newBlankPlan(); await savePlan(p); await refresh(p.id); }}>
+            New blank
+          </button>
+          <button className="btn ghost small" onClick={() => setMode('questionnaire')}>Generate / re-run</button>
+          <button
+            className="btn danger small"
+            onClick={async () => {
+              if (!confirm(`Delete plan “${selected.name}”?`)) return;
+              await deletePlan(selected.id);
+              await refresh();
+            }}
+          >
+            Delete
           </button>
         </div>
       </Panel>
 
-      {plan.weeks.map((week, wi) => (
-        <WeekBlock key={week.id} label={week.label} defaultOpen={wi === 0}>
-          {week.days.map((day) => (
-            <div key={day.id} className="mb-3 last:mb-0">
-              <div className="font-cond font-semibold text-steel text-sm">{day.label}</div>
-              {day.sessions.map((s) => (
-                <div
-                  key={s.id}
-                  className={`border-l-4 pl-3 py-2 my-1 rounded-r-[10px] bg-chalk ${s.isKey ? 'border-effort' : 'border-lane'}`}
-                >
-                  <div className="flex justify-between items-start gap-2">
-                    <div>
-                      <span className="tag">{s.type}</span>
-                      {s.isKey && <span className="text-effort text-xs font-semibold">key session</span>}
-                      <div className="font-cond font-semibold">{s.title}</div>
-                      {s.detail && <p className="text-sm m-0 mt-1">{s.detail}</p>}
-                    </div>
-                    <button
-                      className="btn ghost small whitespace-nowrap"
-                      onClick={() => onLog({ type: s.type, title: s.title, workoutId: s.workoutId })}
-                    >
-                      Log this
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
-          ))}
-        </WeekBlock>
-      ))}
-
-      <p className="text-steel text-sm mt-2">
-        Editing plans — moving sessions, adding your own, saving templates — arrives next.
-      </p>
+      <PlanBuilder plan={selected} onChange={save} onLog={onLog} />
     </>
-  );
-}
-
-function WeekBlock({ label, defaultOpen, children }: { label: string; defaultOpen?: boolean; children: React.ReactNode }) {
-  const [open, setOpen] = useState(!!defaultOpen);
-  return (
-    <Panel>
-      <button className="w-full text-left flex justify-between items-center" aria-expanded={open} onClick={() => setOpen((o) => !o)}>
-        <span className="font-cond font-semibold text-lg">{label}</span>
-        <span className="text-steel">{open ? '▲' : '▼'}</span>
-      </button>
-      {open && <div className="mt-3 border-t border-line pt-3">{children}</div>}
-    </Panel>
   );
 }

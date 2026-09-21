@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Panel, ScreenTitle, EmptyState } from '../components/ui';
 import LogItem from '../components/LogItem';
+import WodCard from '../components/WodCard';
+import type { LogType } from '../core/types';
 import type { Log, Profile } from '../core/types';
 import { weekStats, weeklyVolume } from '../core/logs';
 import { today, niceDate } from '../core/time';
@@ -12,7 +14,11 @@ function daysToRace(raceDate?: string): number | null {
   return Math.ceil((new Date(raceDate + 'T12:00').getTime() - Date.now()) / 86400000);
 }
 
-export default function TodayScreen({ onLog }: { onLog: () => void }) {
+export default function TodayScreen({
+  onLog,
+}: {
+  onLog: (prefill?: { type: LogType; title: string; workoutId?: string }) => void;
+}) {
   const [logs, setLogs] = useState<Log[] | null>(null);
   const [profile, setProfile] = useState<Profile | undefined>();
 
@@ -62,6 +68,9 @@ export default function TodayScreen({ onLog }: { onLog: () => void }) {
         )}
       </Panel>
 
+      {/* Workout of the day */}
+      <WodCard onLog={onLog} />
+
       {/* This week */}
       <Panel>
         <h3 className="font-cond font-semibold text-xl m-0 mb-2">This week</h3>
@@ -100,7 +109,7 @@ export default function TodayScreen({ onLog }: { onLog: () => void }) {
       <Panel>
         <div className="flex justify-between items-center mb-1">
           <h3 className="font-cond font-semibold text-xl m-0">Recent</h3>
-          <button className="btn small" onClick={onLog}>Log a workout</button>
+          <button className="btn small" onClick={() => onLog()}>Log a workout</button>
         </div>
         {recent.length ? (
           recent.map((w) => <LogItem key={w.id} w={w} />)

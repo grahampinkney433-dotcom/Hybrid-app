@@ -36,6 +36,10 @@ export const saveProfile = (p: Profile) => setMeta('profile', p);
 export const getSeedState = () => getMeta<SeedState>('seed');
 export const setSeedState = (s: SeedState) => setMeta('seed', s);
 
+// Workout-of-the-day re-roll offsets, keyed by `${date}|${mode}`.
+export const getWodOffsets = () => getMeta<Record<string, number>>('wod');
+export const saveWodOffsets = (m: Record<string, number>) => setMeta('wod', m);
+
 // ---- workouts (library + user) ----
 
 export interface WorkoutFilter {

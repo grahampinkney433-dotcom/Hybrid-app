@@ -66,7 +66,7 @@ export default function App() {
       </header>
 
       <main className="max-w-app mx-auto px-4 pt-[6px] pb-[110px]">
-        {view === 'today' && <TodayScreen onLog={() => openLog({})} />}
+        {view === 'today' && <TodayScreen onLog={(prefill) => openLog(prefill ? { prefill } : {})} />}
         {view === 'log' && (
           <LogScreen
             key={logKey.current}

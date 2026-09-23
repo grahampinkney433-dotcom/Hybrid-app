@@ -1,0 +1,21 @@
+name: CI
+
+# Runs the tests and a production build on every push (except main, which the deploy
+# workflow already tests) and on every pull request. Keeps the branch honest before merge.
+on:
+  push:
+    branches-ignore: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run build

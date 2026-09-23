@@ -82,3 +82,274 @@ body {
   outline: 2px solid var(--lane);
   outline-offset: 2px;
 }
+
+/*
+  Component styles ported verbatim from the prototype. These are the settled, signature
+  pieces (race strip, sticky race clock, segmented tabs, lift rows, PB table, bars) — kept
+  as plain CSS rather than Tailwind utilities so the markup reads like the prototype's.
+*/
+@layer components {
+  /* Base form controls (inputs/selects/textareas) matching the prototype. */
+  .field {
+    width: 100%;
+    background: var(--chalk);
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    padding: 9px 10px;
+    color: inherit;
+  }
+  textarea.field {
+    min-height: 70px;
+    resize: vertical;
+  }
+  .field-label {
+    display: block;
+    font-size: 13px;
+    color: var(--steel);
+    margin-bottom: 4px;
+  }
+
+  /* Buttons. */
+  .btn {
+    background: var(--lane);
+    color: #fff;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .btn.ghost {
+    background: transparent;
+    color: var(--lane);
+    border: 1px solid var(--lane);
+  }
+  .btn.danger {
+    background: transparent;
+    color: var(--effort);
+    border: 1px solid var(--effort);
+  }
+  .btn.small {
+    padding: 6px 11px;
+    font-size: 14px;
+  }
+  .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /* Segmented, horizontally scrollable tab strip (workout type, history filter…). */
+  .seg-tabs {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    margin-bottom: 12px;
+  }
+  .seg-tabs button {
+    flex: 0 0 auto;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    border-radius: 20px;
+    padding: 7px 13px;
+    cursor: pointer;
+  }
+  .seg-tabs button[aria-pressed='true'] {
+    background: var(--graphite);
+    color: var(--chalk);
+    border-color: var(--graphite);
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    background: var(--lane-soft);
+    color: var(--lane);
+    margin-right: 6px;
+  }
+  .rpe {
+    font: 600 15px var(--cond, 'Barlow Condensed');
+    color: var(--effort);
+  }
+
+  /* Race strip: the signature split-entry element. */
+  .strip {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .seg {
+    display: grid;
+    grid-template-columns: 34px 1fr 96px;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 0;
+    border-top: 1px dashed var(--line);
+  }
+  .seg:first-child {
+    border-top: 0;
+  }
+  .seg .n {
+    font: 700 17px 'Barlow Condensed', sans-serif;
+    color: var(--steel);
+    text-align: center;
+  }
+  .seg.station .n {
+    color: var(--lane);
+  }
+  .seg.station .name {
+    font-weight: 600;
+  }
+  .seg .name small {
+    display: block;
+    color: var(--steel);
+    font-size: 12px;
+    font-weight: 400;
+  }
+  .seg input {
+    text-align: center;
+    font: 600 18px 'Barlow Condensed', sans-serif;
+    padding: 6px;
+  }
+
+  /* Sticky race clock that stays visible while entering splits. */
+  .clock {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: var(--graphite);
+    color: var(--chalk);
+    border-radius: 14px;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .clock b {
+    font: 700 44px/1 'Barlow Condensed', sans-serif;
+    letter-spacing: 0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+  .clock span {
+    font-size: 13px;
+    opacity: 0.75;
+    text-align: right;
+  }
+
+  /* Strength lift rows. */
+  .set-row {
+    display: grid;
+    grid-template-columns: 1fr 58px 58px 70px 34px;
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+  .set-row input {
+    padding: 8px 6px;
+  }
+  .x {
+    background: none;
+    border: 0;
+    color: var(--steel);
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  /* History list item + PB table. */
+  .list-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 0;
+    border-top: 1px solid var(--line);
+  }
+  .list-item:first-child {
+    border-top: 0;
+  }
+  .pb-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+  }
+  .pb-table td {
+    padding: 7px 0;
+    border-top: 1px solid var(--line);
+  }
+  .pb-table tr:first-child td {
+    border-top: 0;
+  }
+  .pb-table td:last-child {
+    text-align: right;
+    font: 600 18px 'Barlow Condensed', sans-serif;
+  }
+
+  /* Nutrition: macro bars, food rows, meals (from the prototype). */
+  .macro-bar {
+    height: 8px;
+    background: var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 4px 0 10px;
+  }
+  .macro-bar i {
+    display: block;
+    height: 100%;
+    background: var(--lane);
+  }
+  .macro-bar i.over {
+    background: var(--effort);
+  }
+  .food-row {
+    display: grid;
+    grid-template-columns: 1fr 72px 60px 26px;
+    gap: 6px;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  .food-row input {
+    padding: 5px 6px;
+  }
+  .add-food {
+    display: grid;
+    grid-template-columns: 1fr 72px auto;
+    gap: 6px;
+    margin-top: 6px;
+  }
+  .meal {
+    border-top: 1px solid var(--line);
+    padding-top: 10px;
+    margin-top: 10px;
+  }
+
+  /* Volume / trend bars. */
+  .bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    height: 110px;
+    margin-top: 8px;
+  }
+  .bars div {
+    flex: 1;
+    background: var(--lane-soft);
+    border-radius: 5px 5px 0 0;
+    min-height: 3px;
+  }
+  .bars div.now {
+    background: var(--lane);
+  }
+  .bar-labels {
+    display: flex;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--steel);
+    margin-top: 4px;
+  }
+  .bar-labels span {
+    flex: 1;
+    text-align: center;
+  }
+}

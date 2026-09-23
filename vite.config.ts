@@ -3,11 +3,12 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
 // The app is served from a GitHub Pages *project* site:
-//   https://grahampinkney433-dotcom.github.io/hybrid-app/
+//   https://grahampinkney433-dotcom.github.io/Hybrid-app/
 // Everything (assets, the service worker, the manifest scope) has to live under
-// that "/hybrid-app/" sub-path, or the app won't install. If you rename the repo,
-// change BASE_PATH to match the new "/<repo-name>/" and nothing else needs to move.
-const BASE_PATH = '/hybrid-app/';
+// that "/Hybrid-app/" sub-path, or the app won't install. NOTE: GitHub Pages paths are
+// CASE-SENSITIVE, so this must match the repository name's exact casing ("Hybrid-app").
+// If you rename the repo, change BASE_PATH to "/<exact-repo-name>/" — nothing else moves.
+const BASE_PATH = '/Hybrid-app/';
 
 export default defineConfig({
   base: BASE_PATH,
